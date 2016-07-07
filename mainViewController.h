@@ -31,7 +31,8 @@
 @property (nonatomic, retain) CBPeripheral              *myPer;
 @property (nonatomic, retain) CBCharacteristic          *myCharacter;
 
-- (IBAction)beganScann:(id)sender;
+
+- (IBAction)testWriteValue:(id)sender;
 
 
 @end

@@ -24,6 +24,8 @@
 - (void)blePowerOn;                                         //蓝牙被打开
 - (void)blePowerOff;                                        //蓝牙被关闭
 
+- (void)sendDataScuccess:(NSArray *)backData;               //发送数据成功
+
 @end
 
 
@@ -39,6 +41,7 @@
     NSString                            *deviceUUID;
     NSString                            *serviceUUID;
     NSString                            *characterUUID;
+    
     
 }
 @property (nonatomic, retain) BabyBluetooth                     *babyBle;
@@ -68,8 +71,8 @@
 //断开连接
 - (void)breakConnect;
 
-//往设备写值
-- (void)writeValueToDevice:(Byte *)bt;
+//往设备写值 <按队列队里，前一条的发送状态作为下一条的发送条件>
+- (void)writeValueToDevice:(NSArray *)array;
 
 //读取已连接设备的RSSI值
 - (void)getRSSIValueOfConnectDevice;

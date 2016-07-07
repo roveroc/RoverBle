@@ -31,7 +31,7 @@
     UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:@"扫描" style:UIBarButtonItemStyleDone target:self action:@selector(beganScann)];
     self.navigationItem.rightBarButtonItem = btn;
     
-    deviceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 375, 667) style:UITableViewStylePlain];
+    deviceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 70, 375, 667-200) style:UITableViewStylePlain];
     deviceTable.delegate = self;
     deviceTable.dataSource = self;
     deviceTable.tableFooterView = [[UIView alloc] init];
@@ -157,7 +157,6 @@
     NSString *key = [keys objectAtIndex:indexPath.row];
     CBPeripheral *per = [deviceArray objectForKey:key];
     [bleHelp connectDevice:per];
-    
 }
 
 #pragma mark ------------------------------------------------ 返回每行的单元格
@@ -177,4 +176,13 @@
     return cell;
 }
 
+- (IBAction)testWriteValue:(id)sender {
+    
+    Byte byte[] = {0xc0,0x01,0x00,0x00,0x00,0x01,0x02,0x00,0x00,0x02,0xc0};
+    NSData *data = [[NSData alloc] initWithBytes:byte length:11];
+    NSArray *arr = [[NSArray alloc] initWithObjects:data, nil];
+    
+    [bleHelp writeValueToDevice:arr];
+    
+}
 @end

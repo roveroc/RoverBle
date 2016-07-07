@@ -8,7 +8,14 @@
 
 #import "BLeHelper.h"
 
+@interface BLeHelper()
+@property (nonatomic, retain) NSArray             *sendDataArray;       //需要发送的指令数组
+@property (assign)            int                 sendDataCount;        //已经成功发送指令的计数
+@end
+
+
 @implementation BLeHelper
+
 @synthesize babyBle;
 @synthesize babyCenter;
 @synthesize deviceDic;
@@ -19,6 +26,7 @@
 @synthesize serviceUUID;
 @synthesize characterUUID;
 @synthesize connectCharacter;
+
 
 #pragma mark ------------------------------------------- 初始化
 - (id)initBabyBle{
@@ -71,16 +79,18 @@
 
 #pragma mark ------------------------------------------- 获取服务、特征
 - (void)getDeviceServices{
-    NSLog(@"获取服务和特征");
     NSMutableArray *servicesUUID = [NSMutableArray arrayWithObject:[CBUUID UUIDWithString:serviceUUID]];
     [connectPer discoverServices:servicesUUID];
 }
 
 #pragma mark ------------------------------------------- 向设备写值
-- (void)writeValueToDevice:(Byte *)bt{
+- (void)writeValueToDevice:(NSArray *)array{
+    _sendDataArray = array;
+    Byte bt[1] = {0x01};
     NSData *data = [NSData dataWithBytes:bt length:sizeof(bt)];
     [connectPer writeValue:data forCharacteristic:connectCharacter type:CBCharacteristicWriteWithResponse];
 }
+
 
 #pragma mark ------------------------------------------- 设置蓝牙委托
 -(void)babyDelegate{
@@ -116,7 +126,6 @@
     [babyBle setBlockOnConnected:^(CBCentralManager *central, CBPeripheral *peripheral) {
         NSLog(@"连接 成功");
         weakSelf.connectPer = peripheral;
-//        [weakSelf.delegate connectSuccess:peripheral];
         [weakSelf getDeviceServices];
     }];
     
@@ -192,6 +201,15 @@
             }
         }
     }];
+    
+/********************************************/
+//向设备的特征号写值得回调
+/********************************************/
+    [babyBle setBlockOnDidWriteValueForCharacteristic:^(CBCharacteristic *characteristic, NSError *error) {
+        Byte *testByte = (Byte *)[characteristic.value bytes];
+        NSLog(@"向设备的特征号写值得回调 = %s",testByte);
+    }];
+    
 }
 
 
