@@ -7,27 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D99A0C80577602713F57FA7 /* libPods-testBleStable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7B578A3329F46CC70E5B205 /* libPods-testBleStable.a */; };
+		973274641D2CA09F00319CE8 /* BLeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 973274631D2CA09F00319CE8 /* BLeHelper.m */; };
 		975D0EB11D2C95EE00480694 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 975D0EB01D2C95EE00480694 /* main.m */; };
 		975D0EB41D2C95EE00480694 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 975D0EB31D2C95EE00480694 /* AppDelegate.m */; };
-		975D0EB71D2C95EE00480694 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 975D0EB61D2C95EE00480694 /* ViewController.m */; };
-		975D0EBA1D2C95EE00480694 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 975D0EB81D2C95EE00480694 /* Main.storyboard */; };
 		975D0EBD1D2C95EE00480694 /* testBleStable.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 975D0EBB1D2C95EE00480694 /* testBleStable.xcdatamodeld */; };
 		975D0EBF1D2C95EE00480694 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 975D0EBE1D2C95EE00480694 /* Assets.xcassets */; };
 		975D0EC21D2C95EE00480694 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 975D0EC01D2C95EE00480694 /* LaunchScreen.storyboard */; };
+		975D0ECD1D2C96CC00480694 /* mainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 975D0ECB1D2C96CC00480694 /* mainViewController.m */; };
+		975D0ECE1D2C96CC00480694 /* mainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 975D0ECC1D2C96CC00480694 /* mainViewController.xib */; };
+		975D0ED01D2C99C200480694 /* PodFile in Resources */ = {isa = PBXBuildFile; fileRef = 975D0ECF1D2C99C200480694 /* PodFile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33390DB2AEBA3DE7CD3080CF /* Pods-testBleStable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testBleStable.release.xcconfig"; path = "Pods/Target Support Files/Pods-testBleStable/Pods-testBleStable.release.xcconfig"; sourceTree = "<group>"; };
+		805CB76C23131A6248F151DA /* Pods-testBleStable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testBleStable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testBleStable/Pods-testBleStable.debug.xcconfig"; sourceTree = "<group>"; };
+		973274621D2CA09F00319CE8 /* BLeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLeHelper.h; sourceTree = "<group>"; };
+		973274631D2CA09F00319CE8 /* BLeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLeHelper.m; sourceTree = "<group>"; };
 		975D0EAC1D2C95EE00480694 /* testBleStable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testBleStable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		975D0EB01D2C95EE00480694 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		975D0EB21D2C95EE00480694 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		975D0EB31D2C95EE00480694 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		975D0EB51D2C95EE00480694 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		975D0EB61D2C95EE00480694 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		975D0EB91D2C95EE00480694 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		975D0EBC1D2C95EE00480694 /* testBleStable.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = testBleStable.xcdatamodel; sourceTree = "<group>"; };
 		975D0EBE1D2C95EE00480694 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		975D0EC11D2C95EE00480694 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		975D0EC31D2C95EE00480694 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		975D0ECA1D2C96CC00480694 /* mainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainViewController.h; sourceTree = "<group>"; };
+		975D0ECB1D2C96CC00480694 /* mainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainViewController.m; sourceTree = "<group>"; };
+		975D0ECC1D2C96CC00480694 /* mainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mainViewController.xib; sourceTree = "<group>"; };
+		975D0ECF1D2C99C200480694 /* PodFile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PodFile; sourceTree = "<group>"; };
+		C7B578A3329F46CC70E5B205 /* libPods-testBleStable.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-testBleStable.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +44,49 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D99A0C80577602713F57FA7 /* libPods-testBleStable.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		157BA8AFD4C0F6BC4159D993 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				805CB76C23131A6248F151DA /* Pods-testBleStable.debug.xcconfig */,
+				33390DB2AEBA3DE7CD3080CF /* Pods-testBleStable.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		60A9E23F83E65666C3DAED0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7B578A3329F46CC70E5B205 /* libPods-testBleStable.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		973274611D2CA08000319CE8 /* Ble */ = {
+			isa = PBXGroup;
+			children = (
+				973274621D2CA09F00319CE8 /* BLeHelper.h */,
+				973274631D2CA09F00319CE8 /* BLeHelper.m */,
+			);
+			name = Ble;
+			sourceTree = "<group>";
+		};
 		975D0EA31D2C95EE00480694 = {
 			isa = PBXGroup;
 			children = (
+				975D0ECF1D2C99C200480694 /* PodFile */,
+				973274611D2CA08000319CE8 /* Ble */,
+				975D0EC91D2C961D00480694 /* RootController */,
 				975D0EAE1D2C95EE00480694 /* testBleStable */,
 				975D0EAD1D2C95EE00480694 /* Products */,
+				157BA8AFD4C0F6BC4159D993 /* Pods */,
+				60A9E23F83E65666C3DAED0E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,9 +103,6 @@
 			children = (
 				975D0EB21D2C95EE00480694 /* AppDelegate.h */,
 				975D0EB31D2C95EE00480694 /* AppDelegate.m */,
-				975D0EB51D2C95EE00480694 /* ViewController.h */,
-				975D0EB61D2C95EE00480694 /* ViewController.m */,
-				975D0EB81D2C95EE00480694 /* Main.storyboard */,
 				975D0EBE1D2C95EE00480694 /* Assets.xcassets */,
 				975D0EC01D2C95EE00480694 /* LaunchScreen.storyboard */,
 				975D0EC31D2C95EE00480694 /* Info.plist */,
@@ -82,6 +120,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		975D0EC91D2C961D00480694 /* RootController */ = {
+			isa = PBXGroup;
+			children = (
+				975D0ECA1D2C96CC00480694 /* mainViewController.h */,
+				975D0ECB1D2C96CC00480694 /* mainViewController.m */,
+				975D0ECC1D2C96CC00480694 /* mainViewController.xib */,
+			);
+			name = RootController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,9 +137,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 975D0EC61D2C95EE00480694 /* Build configuration list for PBXNativeTarget "testBleStable" */;
 			buildPhases = (
+				E3B2A20C205FE1727E157B68 /* [CP] Check Pods Manifest.lock */,
 				975D0EA81D2C95EE00480694 /* Sources */,
 				975D0EA91D2C95EE00480694 /* Frameworks */,
 				975D0EAA1D2C95EE00480694 /* Resources */,
+				332898EABA42FADBED64982A /* [CP] Embed Pods Frameworks */,
+				E485869062F96E7BD29AEB02 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -141,11 +192,60 @@
 			files = (
 				975D0EC21D2C95EE00480694 /* LaunchScreen.storyboard in Resources */,
 				975D0EBF1D2C95EE00480694 /* Assets.xcassets in Resources */,
-				975D0EBA1D2C95EE00480694 /* Main.storyboard in Resources */,
+				975D0ED01D2C99C200480694 /* PodFile in Resources */,
+				975D0ECE1D2C96CC00480694 /* mainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		332898EABA42FADBED64982A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-testBleStable/Pods-testBleStable-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3B2A20C205FE1727E157B68 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E485869062F96E7BD29AEB02 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-testBleStable/Pods-testBleStable-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		975D0EA81D2C95EE00480694 /* Sources */ = {
@@ -153,23 +253,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				975D0EBD1D2C95EE00480694 /* testBleStable.xcdatamodeld in Sources */,
-				975D0EB71D2C95EE00480694 /* ViewController.m in Sources */,
 				975D0EB41D2C95EE00480694 /* AppDelegate.m in Sources */,
 				975D0EB11D2C95EE00480694 /* main.m in Sources */,
+				973274641D2CA09F00319CE8 /* BLeHelper.m in Sources */,
+				975D0ECD1D2C96CC00480694 /* mainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		975D0EB81D2C95EE00480694 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				975D0EB91D2C95EE00480694 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		975D0EC01D2C95EE00480694 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -267,22 +360,28 @@
 		};
 		975D0EC71D2C95EE00480694 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 805CB76C23131A6248F151DA /* Pods-testBleStable.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: 淼 吴 (6K2ZT7B47Z)";
 				INFOPLIST_FILE = testBleStable/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tlblios.ble.testBleStable;
+				PRODUCT_BUNDLE_IDENTIFIER = com.szrk.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		975D0EC81D2C95EE00480694 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33390DB2AEBA3DE7CD3080CF /* Pods-testBleStable.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: 淼 吴 (6K2ZT7B47Z)";
 				INFOPLIST_FILE = testBleStable/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tlblios.ble.testBleStable;
+				PRODUCT_BUNDLE_IDENTIFIER = com.szrk.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -306,6 +405,7 @@
 				975D0EC81D2C95EE00480694 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
