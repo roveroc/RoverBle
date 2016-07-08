@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6D99A0C80577602713F57FA7 /* libPods-testBleStable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7B578A3329F46CC70E5B205 /* libPods-testBleStable.a */; };
 		973274641D2CA09F00319CE8 /* BLeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 973274631D2CA09F00319CE8 /* BLeHelper.m */; };
+		9732746D1D2F48A400319CE8 /* DatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9732746C1D2F48A400319CE8 /* DatabaseHelper.m */; };
+		973274711D2F599200319CE8 /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = 973274701D2F599200319CE8 /* Users.m */; };
 		975D0EB11D2C95EE00480694 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 975D0EB01D2C95EE00480694 /* main.m */; };
 		975D0EB41D2C95EE00480694 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 975D0EB31D2C95EE00480694 /* AppDelegate.m */; };
 		975D0EBD1D2C95EE00480694 /* testBleStable.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 975D0EBB1D2C95EE00480694 /* testBleStable.xcdatamodeld */; };
@@ -24,6 +26,10 @@
 		805CB76C23131A6248F151DA /* Pods-testBleStable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testBleStable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testBleStable/Pods-testBleStable.debug.xcconfig"; sourceTree = "<group>"; };
 		973274621D2CA09F00319CE8 /* BLeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLeHelper.h; sourceTree = "<group>"; };
 		973274631D2CA09F00319CE8 /* BLeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLeHelper.m; sourceTree = "<group>"; };
+		9732746B1D2F48A400319CE8 /* DatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseHelper.h; sourceTree = "<group>"; };
+		9732746C1D2F48A400319CE8 /* DatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseHelper.m; sourceTree = "<group>"; };
+		9732746F1D2F599200319CE8 /* Users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Users.h; sourceTree = "<group>"; };
+		973274701D2F599200319CE8 /* Users.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Users.m; sourceTree = "<group>"; };
 		975D0EAC1D2C95EE00480694 /* testBleStable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testBleStable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		975D0EB01D2C95EE00480694 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		975D0EB21D2C95EE00480694 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -77,9 +83,29 @@
 			name = Ble;
 			sourceTree = "<group>";
 		};
+		9732746A1D2F487700319CE8 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				9732746B1D2F48A400319CE8 /* DatabaseHelper.h */,
+				9732746C1D2F48A400319CE8 /* DatabaseHelper.m */,
+			);
+			name = DataBase;
+			sourceTree = "<group>";
+		};
+		9732746E1D2F597000319CE8 /* Instance */ = {
+			isa = PBXGroup;
+			children = (
+				9732746F1D2F599200319CE8 /* Users.h */,
+				973274701D2F599200319CE8 /* Users.m */,
+			);
+			name = Instance;
+			sourceTree = "<group>";
+		};
 		975D0EA31D2C95EE00480694 = {
 			isa = PBXGroup;
 			children = (
+				9732746E1D2F597000319CE8 /* Instance */,
+				9732746A1D2F487700319CE8 /* DataBase */,
 				975D0ECF1D2C99C200480694 /* PodFile */,
 				973274611D2CA08000319CE8 /* Ble */,
 				975D0EC91D2C961D00480694 /* RootController */,
@@ -252,8 +278,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9732746D1D2F48A400319CE8 /* DatabaseHelper.m in Sources */,
 				975D0EBD1D2C95EE00480694 /* testBleStable.xcdatamodeld in Sources */,
 				975D0EB41D2C95EE00480694 /* AppDelegate.m in Sources */,
+				973274711D2F599200319CE8 /* Users.m in Sources */,
 				975D0EB11D2C95EE00480694 /* main.m in Sources */,
 				973274641D2CA09F00319CE8 /* BLeHelper.m in Sources */,
 				975D0ECD1D2C96CC00480694 /* mainViewController.m in Sources */,

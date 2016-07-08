@@ -10,6 +10,7 @@
 #import "BLeHelper.h"
 #import <CoreBluetooth/CoreBluetooth.h>
 #import <MBProgressHUD.h>
+#import "DatabaseHelper.h"
 
 @interface mainViewController : UIViewController<BleHelperDelegate,UITableViewDelegate,UITableViewDataSource>{
     

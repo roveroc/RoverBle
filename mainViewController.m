@@ -8,6 +8,7 @@
 
 #import "mainViewController.h"
 #import <CommonCrypto/CommonCryptor.h>
+#import "Users.h"
 
 @interface mainViewController ()
 
@@ -25,19 +26,37 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    deviceArray = [[NSMutableDictionary alloc] init];
-    connectDeviceUUID = @"";
+//测试蓝牙功能
+//    deviceArray = [[NSMutableDictionary alloc] init];
+//    connectDeviceUUID = @"";
+//    
+//    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:@"扫描" style:UIBarButtonItemStyleDone target:self action:@selector(beganScann)];
+//    self.navigationItem.rightBarButtonItem = btn;
+//    
+//    deviceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 70, 375, 667-200) style:UITableViewStylePlain];
+//    deviceTable.delegate = self;
+//    deviceTable.dataSource = self;
+//    deviceTable.tableFooterView = [[UIView alloc] init];
+//    [self.view addSubview:deviceTable];
+//    
+//    [self beganScann];
     
-    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:@"扫描" style:UIBarButtonItemStyleDone target:self action:@selector(beganScann)];
-    self.navigationItem.rightBarButtonItem = btn;
     
-    deviceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 70, 375, 667-200) style:UITableViewStylePlain];
-    deviceTable.delegate = self;
-    deviceTable.dataSource = self;
-    deviceTable.tableFooterView = [[UIView alloc] init];
-    [self.view addSubview:deviceTable];
+//测试数据库功能
+    DatabaseHelper *db = [[DatabaseHelper alloc] init];
+    [db createDatabase];
     
-    [self beganScann];
+    [db insertAUserInfo:@"123" name:@"rover001" note:@"rover" height:@"rover" weight:@"rover" brithday:@"rover" sex:@"rover" age:@"rover"];
+    [db modifyUserInfo:@"1" witchInfo:name      newValue:@"Jack"];
+    [db modifyUserInfo:@"1" witchInfo:note      newValue:@"moster"];
+    [db modifyUserInfo:@"1" witchInfo:height    newValue:@"180"];
+    [db modifyUserInfo:@"1" witchInfo:weight    newValue:@"70"];
+    [db modifyUserInfo:@"1" witchInfo:brithday  newValue:@"19900909"];
+    [db modifyUserInfo:@"1" witchInfo:sex       newValue:@"man"];
+    [db modifyUserInfo:@"1" witchInfo:age       newValue:@"28"];
+    
+    Users *user = [db getUserInfomation:@"rover001"];
+    NSLog(@"查询到的信息为 = %@",user);
 }
 
 - (void)didReceiveMemoryWarning {

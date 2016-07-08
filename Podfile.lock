@@ -1,15 +1,20 @@
 PODS:
   - BabyBluetooth (0.7.0)
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
   - MBProgressHUD (0.9.2)
 
 DEPENDENCIES:
   - BabyBluetooth (~> 0.7.0)
+  - FMDB
   - MBProgressHUD (~> 0.9.2)
 
 SPEC CHECKSUMS:
   BabyBluetooth: d50758aecf24d4a0ab9271d69f0f116d6bee51c9
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
 
-PODFILE CHECKSUM: 0c7af83a384676666925a78236a7e2d6bb059c7b
+PODFILE CHECKSUM: b289f09fbcfd603ac13c3f38a39d2159b1987ec2
 
 COCOAPODS: 1.0.1
