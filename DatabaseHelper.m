@@ -33,7 +33,7 @@
         note text,height text,weight text,brithday text,sex text,age int);";
         //手环表
         NSString *watchs = @"create table IF NOT EXISTS watch (id integer primary key autoincrement,uuid text,color text,\
-        surfaceVer text,softVer text,power text,date text,accountMoney float，cardMoney float,userID integer,\
+        surfaceVer text,softVer text,power text,date text,accountMoney text,cardMoney text,userID integer,\
         FOREIGN KEY(userID) REFERENCES users(id));";
         //闹钟表
         NSString *alarm = @"create table IF NOT EXISTS alarm (id integer primary key autoincrement,name text,note text,\
@@ -193,6 +193,76 @@
     return user;
 }
 
+
+#pragma mark ------------------------------------------- 修改用户数据的某一个字段值
+- (BOOL)insertAWatchInfo:(NSString *)uuid
+                   color:(NSString *)color
+              surfaceVer:(NSString *)surfaceVer
+                 softVer:(NSString *)softVer
+                   power:(NSString *)power
+                    date:(NSString *)date
+            accountMoney:(NSString *)accMoney
+               cardMoney:(NSString *)cardMoney
+                     uid:(NSString *)uid{
+    if([db open]){
+        FMResultSet *s = [db executeQuery:@"select uuid from watch where uuid = ?",uuid];
+        if ([s next]) {
+            NSLog(@"手环已经添加");
+            [db close];
+            return YES;
+        }
+        
+        BOOL flag = [db executeUpdate:@"insert into watch (uuid,color,surfaceVer,softVer,power,date,\
+                     accountMoney,cardMoney,userID) values (?,?,?,?,?,?,?,?,?)",uuid,color,surfaceVer,softVer,power,date,accMoney,cardMoney,uid];
+        if(flag == NO){
+            NSLog(@"插入手环数据出错");
+        }
+    }
+    [db close];
+    return NO;
+}
+
+#pragma mark ------------------------------------------- 判断手环是否添加过
+- (BOOL)wathcIsAdd:(NSString *)uuid{
+    if([db open]){
+        FMResultSet *s = [db executeQuery:@"select uuid from watch where uuid = ?",uuid];
+        if ([s next]) {
+            NSLog(@"手环已经添加");
+            [db close];
+            return YES;
+        }
+    }
+    [db close];
+    return NO;
+}
+
+#pragma mark ------------------------------------------- 获取某个用户绑定的手环 <可能有多个>
+- (NSArray *)getUserWatches:(NSString *)uid{
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    if([db open]){
+        FMResultSet *s = [db executeQuery:@"select uuid,color,surfaceVer,softVer,power,date,accountMoney,\
+                          cardMoney,userID from watch where userID = ?",uid];
+        while ([s next]) {
+            Watch *w = [[Watch alloc] init];
+            w.uuid              = [s stringForColumn:@"uuid"];
+            w.color             = [s stringForColumn:@"color"];
+            w.surfaceVer        = [s stringForColumn:@"surfaceVer"];
+            w.softVer           = [s stringForColumn:@"softVer"];
+            w.power             = [s stringForColumn:@"power"];
+            w.date              = [s stringForColumn:@"date"];
+            w.accountMoney      = [s stringForColumn:@"accountMoney"];
+            w.cardMoney         = [s stringForColumn:@"cardMoney"];
+            w.uid               = [s stringForColumn:@"userID"];
+            [arr addObject:w];
+        }
+    }else{
+        NSLog(@"数据库打开出错");
+        [db close];
+        return nil;
+    }
+    [db close];
+    return (NSArray *)arr;
+}
 
 
 @end

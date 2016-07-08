@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <FMDatabase.h>
 #import "Users.h"
-
+#import "Watch.h"
 
 @interface DatabaseHelper : NSObject{
     
@@ -54,11 +54,16 @@
               surfaceVer:(NSString *)surfaceVer
                  softVer:(NSString *)softVer
                    power:(NSString *)power
-                    time:(NSString *)time
+                    date:(NSString *)date
             accountMoney:(NSString *)accMoney
                cardMoney:(NSString *)cardMoney
                      uid:(NSString *)uid;
 
+//手环是否已经添加过
+- (BOOL)wathcIsAdd:(NSString *)uuid;
+
+//获取某个用户绑定的手环 <可能有多个>
+- (NSArray *)getUserWatches:(NSString *)uid;
 
 
 

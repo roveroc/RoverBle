@@ -57,6 +57,14 @@
     
     Users *user = [db getUserInfomation:@"rover001"];
     NSLog(@"查询到的信息为 = %@",user);
+    
+    
+    [db insertAWatchInfo:@"123456" color:@"红色" surfaceVer:@"V1.0" softVer:@"V1.1" power:@"100%" date:@"19900011" accountMoney:@"1000" cardMoney:@"100" uid:@"1"];
+    
+    [db insertAWatchInfo:@"654321" color:@"红色" surfaceVer:@"V1.0" softVer:@"V1.1" power:@"100%" date:@"19900011" accountMoney:@"1000" cardMoney:@"100" uid:@"1"];
+    
+    NSArray *arr = [db getUserWatches:@"1"];
+    NSLog(@"查询到的手环信息为 = %@",arr);
 }
 
 - (void)didReceiveMemoryWarning {
