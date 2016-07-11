@@ -8,9 +8,6 @@
 
 #import "mainViewController.h"
 #import <CommonCrypto/CommonCryptor.h>
-#import "Users.h"
-
-
 #import "BankPayBase.h"
 
 @interface mainViewController ()
@@ -30,44 +27,121 @@
     // Do any additional setup after loading the view from its nib.
     
 //测试蓝牙功能
-    deviceArray = [[NSMutableDictionary alloc] init];
-    connectDeviceUUID = @"";
-    
-    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:@"扫描" style:UIBarButtonItemStyleDone target:self action:@selector(beganScann)];
-    self.navigationItem.rightBarButtonItem = btn;
-    
-    deviceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 70, 375, 667-200) style:UITableViewStylePlain];
-    deviceTable.delegate = self;
-    deviceTable.dataSource = self;
-    deviceTable.tableFooterView = [[UIView alloc] init];
-    [self.view addSubview:deviceTable];
-    
-    [self beganScann];
+//    deviceArray = [[NSMutableDictionary alloc] init];
+//    connectDeviceUUID = @"";
+//    
+//    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:@"扫描" style:UIBarButtonItemStyleDone target:self action:@selector(beganScann)];
+//    self.navigationItem.rightBarButtonItem = btn;
+//    
+//    deviceTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 70, 375, 667-200) style:UITableViewStylePlain];
+//    deviceTable.delegate = self;
+//    deviceTable.dataSource = self;
+//    deviceTable.tableFooterView = [[UIView alloc] init];
+//    [self.view addSubview:deviceTable];
+//    
+//    [self beganScann];
     
     
 //测试数据库功能
-//    DatabaseHelper *db = [[DatabaseHelper alloc] init];
-//    [db createDatabase];
-//    
-//    [db insertAUserInfo:@"123" name:@"rover001" note:@"rover" height:@"rover" weight:@"rover" brithday:@"rover" sex:@"rover" age:@"rover"];
-//    [db modifyUserInfo:@"1" witchInfo:name      newValue:@"Jack"];
-//    [db modifyUserInfo:@"1" witchInfo:note      newValue:@"moster"];
-//    [db modifyUserInfo:@"1" witchInfo:height    newValue:@"180"];
-//    [db modifyUserInfo:@"1" witchInfo:weight    newValue:@"70"];
-//    [db modifyUserInfo:@"1" witchInfo:brithday  newValue:@"19900909"];
-//    [db modifyUserInfo:@"1" witchInfo:sex       newValue:@"man"];
-//    [db modifyUserInfo:@"1" witchInfo:age       newValue:@"28"];
-//    
-//    Users *user = [db getUserInfomation:@"rover001"];
-//    NSLog(@"查询到的信息为 = %@",user);
-//    
-//    
-//    [db insertAWatchInfo:@"123456" color:@"红色" surfaceVer:@"V1.0" softVer:@"V1.1" power:@"100%" date:@"19900011" accountMoney:@"1000" cardMoney:@"100" uid:@"1"];
-//    
-//    [db insertAWatchInfo:@"654321" color:@"红色" surfaceVer:@"V1.0" softVer:@"V1.1" power:@"100%" date:@"19900011" accountMoney:@"1000" cardMoney:@"100" uid:@"1"];
-//    
-//    NSArray *arr = [db getUserWatches:@"1"];
-//    NSLog(@"查询到的手环信息为 = %@",arr);
+    DatabaseHelper *db = [[DatabaseHelper alloc] init];
+    [db createDatabase];
+    
+    Users *user = [[Users alloc] init];
+    user.account    = @"123";
+    user.name       = @"Rover";
+    user.note       = @"where my code";
+    user.height     = @"178";
+    user.weight     = @"66";
+    user.brithday   = @"1978";
+    user.sex        = @"man";
+    user.age        = @"18";
+    
+    [db insertAUserInfo:user];
+    [db modifyUserInfo:@"1" whichInfo:name      newValue:@"Jack"];
+    [db modifyUserInfo:@"1" whichInfo:note      newValue:@"moster"];
+    [db modifyUserInfo:@"1" whichInfo:height    newValue:@"180"];
+    [db modifyUserInfo:@"1" whichInfo:weight    newValue:@"70"];
+    [db modifyUserInfo:@"1" whichInfo:brithday  newValue:@"19900909"];
+    [db modifyUserInfo:@"1" whichInfo:sex       newValue:@"man"];
+    [db modifyUserInfo:@"1" whichInfo:age       newValue:@"28"];
+    
+    Users *u = [db getUserInfomation:@"Rover"];
+    NSLog(@"查询到的信息为 = %@",u);
+    
+    Watch *watch = [[Watch alloc] init];
+    watch.uuid          = @"123456";
+    watch.color         = @"红色";
+    watch.surfaceVer    = @"V1.0";
+    watch.softVer       = @"V1.0";
+    watch.power         = @"100%";
+    watch.date          = @"1978_07_07";
+    watch.accountMoney  = @"1000";
+    watch.cardMoney     = @"121";
+    watch.uid           = @"1";
+    
+    Watch *watch1 = [[Watch alloc] init];
+    watch1.uuid          = @"123456";
+    watch1.color         = @"红色";
+    watch1.surfaceVer    = @"V1.0";
+    watch1.softVer       = @"V1.0";
+    watch1.power         = @"100%";
+    watch1.date          = @"1978_07_07";
+    watch1.accountMoney  = @"1000";
+    watch1.cardMoney     = @"121";
+    watch1.uid           = @"1";
+    
+    [db insertAWatchInfo:watch];
+    [db insertAWatchInfo:watch1];
+    
+    NSArray *arr = [db getUserWatches:@"1"];
+    NSLog(@"查询到的手环信息为 = %@",arr);
+    
+    [db modifyWatchInfo:@"123456" whichInfo:softVer      newValue:@"V1.2"];
+    [db modifyWatchInfo:@"123456" whichInfo:power        newValue:@"9%"];
+    [db modifyWatchInfo:@"123456" whichInfo:date         newValue:@"19890707"];
+    [db modifyWatchInfo:@"654321" whichInfo:accountMoney newValue:@"1000000$"];
+    [db modifyWatchInfo:@"654321" whichInfo:cardMoney    newValue:@"10000$"];
+    
+    [db deleteWatchInfo:@"654321"];
+    
+//闹钟
+    Clockes *clock = [[Clockes alloc] init];
+    clock.ck_name = @"上班闹钟";
+    clock.ck_note = @"刷牙洗脸抹皮鞋";
+    clock.ck_date = @"6:30";
+    clock.ck_week = @"周一";
+    clock.ck_state = @"1";
+    clock.ck_watchUUID = @"123456";
+    [db insertAClock:clock];
+    
+    NSArray *c_arr = [db getAllClock:@"123456"];
+    for(int i=0;i<c_arr.count;i++){
+        Clockes *temp = [c_arr objectAtIndex:i];
+        NSLog(@"id = %d  name = %@",temp.ck_id,temp.ck_name);
+    }
+    
+    Clockes *clock1 = [[Clockes alloc] init];
+    clock1.ck_name = @"上班闹钟";
+    clock1.ck_note = @"刷牙洗脸抹皮鞋";
+    clock1.ck_date = @"7:30";
+    clock1.ck_week = @"周一、周二";
+    clock1.ck_state = @"0";
+    clock1.ck_watchUUID = @"123456";
+    clock1.ck_id = 1;
+    [db modifyAClock:clock1];
+    
+    [db deleteAClock:10];
+    
+//运动步数
+
+    Movementes *move = [[Movementes alloc] init];
+    move.mv_date        = [NSDate date];
+    move.mv_step        = @"10000";
+    move.mv_distance    = @"10";
+    move.mv_calorie     = @"20";
+    move.mv_goalStep    = @"50000";
+    move.mv_watchUUID   = @"123456";
+    [db insertAMovementRecord:move];
 }
 
 - (void)didReceiveMemoryWarning {

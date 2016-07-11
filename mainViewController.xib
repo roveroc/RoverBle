@@ -18,7 +18,7 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOk-jS-LO3">
                     <rect key="frame" x="8" y="607" width="60" height="30"/>
                     <state key="normal" title="测试写值">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="testWriteValue:" destination="-1" eventType="touchUpInside" id="FSY-VY-qp8"/>
