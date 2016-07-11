@@ -84,16 +84,13 @@
         bleHelp.delegate = self;
         bleHelp.deviceUUID    = @"C0933BCB-F113-0567-F826-154BFAECCC68";
         
-        
-        
         bleHelp.serviceUUID   = @"48EB9001-F352-5FA0-9B06-8FCAA22602CF";
         
+        bleHelp.writeUUID     = @"48EB9002-F352-5FA0-9B06-8FCAA22602CF";
         
-        
-        
-        bleHelp.characterUUID = @"48EB9002-F352-5FA0-9B06-8FCAA22602CF";
-        
-        
+        bleHelp.characterUUIDArray = [[NSArray alloc] initWithObjects:@"48EB9002-F352-5FA0-9B06-8FCAA22602CF",
+                                                                      @"48eb9003-f352-5fa0-9b06-8fcaa22602cf",
+                                                                      nil];
         
         
     }
@@ -217,14 +214,48 @@
     return cell;
 }
 
+
+
+
+- (NSData*) hexToBytes:(NSString *)string {
+    NSMutableData* data = [NSMutableData data];
+    int idx;
+    for (idx = 0; idx+2 <= string.length; idx+=2) {
+        NSRange range = NSMakeRange(idx, 2);
+        NSString* hexStr = [string substringWithRange:range];
+        NSScanner* scanner = [NSScanner scannerWithString:hexStr];
+        unsigned int intValue;
+        [scanner scanHexInt:&intValue];
+        [data appendBytes:&intValue length:1];
+    }
+    return data;
+}
+
+
 - (IBAction)testWriteValue:(id)sender {
     
-    BankPayBase *bank = [[BankPayBase alloc] init];
+    Byte b1[20] = {0xc0,0x01,0x00,0x00,0x00,0x00,0x04,0x00,0x0e,0x1e,0x00,0x0a,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
     
-    NSArray *arr = [bank checkStep];
+    Byte b2[5] = {0x00,0x00,0x15,0x05,0xc0};
     
-    [bleHelp writeValueToDevice:arr];
+    NSData *d1 =  [[NSData alloc] initWithBytes:b1 length:20];
     
+    [bleHelp writeValueToDevice:d1];
     
+    NSData *d2 =  [[NSData alloc] initWithBytes:b2 length:5];
+    
+    [bleHelp writeValueToDevice:d2];
+    
+//    BankPayBase *bank = [[BankPayBase alloc] init];
+//    NSString *s = [bank sendMustData];
+//    NSData *d3 = [s dataUsingEncoding:NSUTF8StringEncoding];
+//    [bleHelp writeValueToDevice:d3];
 }
+
+
+- (void)sendDataScuccess:(NSData *)backData{
+    NSLog(@"发送数据后，设备返回的数据为 = %@",backData);
+}
+
+
 @end
