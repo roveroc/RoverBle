@@ -79,16 +79,44 @@
 
 #pragma mark ------------------------------------------- 获取服务、特征
 - (void)getDeviceServices{
-    NSMutableArray *servicesUUID = [NSMutableArray arrayWithObject:[CBUUID UUIDWithString:serviceUUID]];
-    [connectPer discoverServices:servicesUUID];
+//    NSMutableArray *servicesUUID = [NSMutableArray arrayWithObject:[CBUUID UUIDWithString:serviceUUID]];
+//    [connectPer discoverServices:servicesUUID];
+    [connectPer discoverServices:nil];
+}
+
+
+
+- (NSData*) hexToBytes:(NSString *)string {
+    NSMutableData* data = [NSMutableData data];
+    int idx;
+    for (idx = 0; idx+2 <= string.length; idx+=2) {
+        NSRange range = NSMakeRange(idx, 2);
+        NSString* hexStr = [string substringWithRange:range];
+        NSScanner* scanner = [NSScanner scannerWithString:hexStr];
+        unsigned int intValue;
+        [scanner scanHexInt:&intValue];
+        [data appendBytes:&intValue length:1];
+    }
+    return data;
 }
 
 #pragma mark ------------------------------------------- 向设备写值
 - (void)writeValueToDevice:(NSArray *)array{
     _sendDataArray = array;
-    Byte bt[1] = {0x01};
-    NSData *data = [NSData dataWithBytes:bt length:sizeof(bt)];
-    [connectPer writeValue:data forCharacteristic:connectCharacter type:CBCharacteristicWriteWithResponse];
+    
+    Byte b1[20] = {0xc0,0x01,0x00,0x00,0x00,0x00,0x04,0x00,0x0e,0x1e,0x00,0x0a,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
+    
+    Byte b2[5] = {0x00,0x00,0x15,0x05,0xc0};
+
+    NSData *d1 =  [[NSData alloc] initWithBytes:b1 length:20];
+    
+    [connectPer writeValue:d1 forCharacteristic:connectCharacter type:CBCharacteristicWriteWithResponse];
+    
+    NSData *d2 =  [[NSData alloc] initWithBytes:b2 length:5];
+    
+    [connectPer writeValue:d2 forCharacteristic:connectCharacter type:CBCharacteristicWriteWithResponse];
+    
+    
 }
 
 
@@ -171,34 +199,47 @@
     
     
 /********************************************/
-//发现设备服务的对调
+//发现设备服务的回调
 /********************************************/
     [babyBle setBlockOnDiscoverServices:^(CBPeripheral *peripheral, NSError *error) {
         NSArray *service = peripheral.services;
         for (CBService *service in peripheral.services){
             NSLog(@"发现外设的服务号为 ------> %@",service.UUID);
-            if ([service.UUID isEqual:[CBUUID UUIDWithString:weakSelf.serviceUUID]]){
-                NSMutableArray *character = [NSMutableArray arrayWithObject:[CBUUID UUIDWithString:weakSelf.characterUUID]];
-                [weakSelf.connectPer discoverCharacteristics:character forService:service];     //读取服务上的特征
-                break;
+//            if ([service.UUID isEqual:[CBUUID UUIDWithString:weakSelf.serviceUUID]])
+            {
+//                NSMutableArray *character = [NSMutableArray arrayWithObject:[CBUUID UUIDWithString:weakSelf.characterUUID]];
+//                [weakSelf.connectPer discoverCharacteristics:nil forService:service];     //读取服务上的特征
+                [peripheral discoverCharacteristics:nil forService:service];     //读取服务上的特征
+//                break;
             }
         }
-        [weakSelf.connectPer discoverCharacteristics:nil forService:service[0]];
+//        [weakSelf.connectPer discoverCharacteristics:nil forService:service[0]];
     }];
     
     
 /********************************************/
-//发现设备特征的对调
+//发现设备的特征回调
 /********************************************/
     [babyBle setBlockOnDiscoverCharacteristics:^(CBPeripheral *peripheral, CBService *service, NSError *error) {
         for (CBCharacteristic *cha in service.characteristics){
-            NSLog(@"发现外设的服务号为 ------> %@",cha);
-            if ([cha.UUID isEqual:[CBUUID UUIDWithString:weakSelf.characterUUID]]){
-                NSLog(@"连接 成功，发现制定的服务和特征");
+            NSLog(@"发现外设的特征为 ------> %@",cha);
+            if ([cha.UUID isEqual:[CBUUID UUIDWithString:weakSelf.characterUUID]])
+            {
                 weakSelf.connectCharacter = cha;
                 [weakSelf.delegate connectSuccessAndFindSerivce:peripheral character:cha];
-                break;
             }
+                NSLog(@"连接 成功，发现制定的服务和特征");
+//                [weakSelf.connectPer setNotifyValue:YES forCharacteristic:cha];
+            
+            [weakSelf.babyBle notify:peripheral
+                      characteristic:cha
+                               block:^(CBPeripheral *peripheral, CBCharacteristic *characteristics, NSError *error) {
+                       //接收到值会进入这个方法
+                       NSLog(@"new value %@",characteristics.value);
+                   }];
+            
+//                break;
+            
         }
     }];
     
@@ -208,6 +249,12 @@
     [babyBle setBlockOnDidWriteValueForCharacteristic:^(CBCharacteristic *characteristic, NSError *error) {
         Byte *testByte = (Byte *)[characteristic.value bytes];
         NSLog(@"向设备的特征号写值得回调 = %s",testByte);
+        
+        
+    }];
+    
+    [babyBle setBlockOnDidUpdateNotificationStateForCharacteristic:^(CBCharacteristic *characteristic, NSError *error) {
+        NSLog(@"向设备的特征号写值得回调 = %@",characteristic);
     }];
     
 }

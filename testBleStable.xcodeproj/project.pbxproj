@@ -12,6 +12,9 @@
 		9732746D1D2F48A400319CE8 /* DatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9732746C1D2F48A400319CE8 /* DatabaseHelper.m */; };
 		973274711D2F599200319CE8 /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = 973274701D2F599200319CE8 /* Users.m */; };
 		973274761D2F985700319CE8 /* Watch.m in Sources */ = {isa = PBXBuildFile; fileRef = 973274751D2F985700319CE8 /* Watch.m */; };
+		9732747D1D2F9DA700319CE8 /* BankPayBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 973274781D2F9DA700319CE8 /* BankPayBase.m */; };
+		9732747E1D2F9DA700319CE8 /* Movement.m in Sources */ = {isa = PBXBuildFile; fileRef = 9732747A1D2F9DA700319CE8 /* Movement.m */; };
+		9732747F1D2F9DA700319CE8 /* number.m in Sources */ = {isa = PBXBuildFile; fileRef = 9732747C1D2F9DA700319CE8 /* number.m */; };
 		975D0EB11D2C95EE00480694 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 975D0EB01D2C95EE00480694 /* main.m */; };
 		975D0EB41D2C95EE00480694 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 975D0EB31D2C95EE00480694 /* AppDelegate.m */; };
 		975D0EBD1D2C95EE00480694 /* testBleStable.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 975D0EBB1D2C95EE00480694 /* testBleStable.xcdatamodeld */; };
@@ -33,6 +36,12 @@
 		973274701D2F599200319CE8 /* Users.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Users.m; sourceTree = "<group>"; };
 		973274741D2F985700319CE8 /* Watch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Watch.h; sourceTree = "<group>"; };
 		973274751D2F985700319CE8 /* Watch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Watch.m; sourceTree = "<group>"; };
+		973274771D2F9DA700319CE8 /* BankPayBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankPayBase.h; sourceTree = "<group>"; };
+		973274781D2F9DA700319CE8 /* BankPayBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankPayBase.m; sourceTree = "<group>"; };
+		973274791D2F9DA700319CE8 /* Movement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movement.h; sourceTree = "<group>"; };
+		9732747A1D2F9DA700319CE8 /* Movement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movement.m; sourceTree = "<group>"; };
+		9732747B1D2F9DA700319CE8 /* number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = number.h; sourceTree = "<group>"; };
+		9732747C1D2F9DA700319CE8 /* number.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = number.m; sourceTree = "<group>"; };
 		975D0EAC1D2C95EE00480694 /* testBleStable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testBleStable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		975D0EB01D2C95EE00480694 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		975D0EB21D2C95EE00480694 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -122,9 +131,23 @@
 			name = Watches;
 			sourceTree = "<group>";
 		};
+		973274801D2F9DAC00319CE8 /* testSendData */ = {
+			isa = PBXGroup;
+			children = (
+				973274771D2F9DA700319CE8 /* BankPayBase.h */,
+				973274781D2F9DA700319CE8 /* BankPayBase.m */,
+				973274791D2F9DA700319CE8 /* Movement.h */,
+				9732747A1D2F9DA700319CE8 /* Movement.m */,
+				9732747B1D2F9DA700319CE8 /* number.h */,
+				9732747C1D2F9DA700319CE8 /* number.m */,
+			);
+			name = testSendData;
+			sourceTree = "<group>";
+		};
 		975D0EA31D2C95EE00480694 = {
 			isa = PBXGroup;
 			children = (
+				973274801D2F9DAC00319CE8 /* testSendData */,
 				9732746E1D2F597000319CE8 /* Instance */,
 				9732746A1D2F487700319CE8 /* DataBase */,
 				975D0ECF1D2C99C200480694 /* PodFile */,
@@ -299,14 +322,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9732747E1D2F9DA700319CE8 /* Movement.m in Sources */,
 				9732746D1D2F48A400319CE8 /* DatabaseHelper.m in Sources */,
 				973274761D2F985700319CE8 /* Watch.m in Sources */,
 				975D0EBD1D2C95EE00480694 /* testBleStable.xcdatamodeld in Sources */,
 				975D0EB41D2C95EE00480694 /* AppDelegate.m in Sources */,
+				9732747F1D2F9DA700319CE8 /* number.m in Sources */,
 				973274711D2F599200319CE8 /* Users.m in Sources */,
 				975D0EB11D2C95EE00480694 /* main.m in Sources */,
 				973274641D2CA09F00319CE8 /* BLeHelper.m in Sources */,
 				975D0ECD1D2C96CC00480694 /* mainViewController.m in Sources */,
+				9732747D1D2F9DA700319CE8 /* BankPayBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
