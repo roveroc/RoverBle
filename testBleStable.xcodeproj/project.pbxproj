@@ -10,6 +10,9 @@
 		6D99A0C80577602713F57FA7 /* libPods-testBleStable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7B578A3329F46CC70E5B205 /* libPods-testBleStable.a */; };
 		970074F91D336E5300FFE6EE /* Clockes.m in Sources */ = {isa = PBXBuildFile; fileRef = 970074F81D336E5300FFE6EE /* Clockes.m */; };
 		970074FD1D338B1A00FFE6EE /* Movementes.m in Sources */ = {isa = PBXBuildFile; fileRef = 970074FC1D338B1A00FFE6EE /* Movementes.m */; };
+		970075011D34D08900FFE6EE /* Sleepes.m in Sources */ = {isa = PBXBuildFile; fileRef = 970075001D34D08900FFE6EE /* Sleepes.m */; };
+		970075051D34EE3100FFE6EE /* Charges.m in Sources */ = {isa = PBXBuildFile; fileRef = 970075041D34EE3100FFE6EE /* Charges.m */; };
+		970075091D34F29500FFE6EE /* Spendes.m in Sources */ = {isa = PBXBuildFile; fileRef = 970075081D34F29500FFE6EE /* Spendes.m */; };
 		973274641D2CA09F00319CE8 /* BLeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 973274631D2CA09F00319CE8 /* BLeHelper.m */; };
 		9732746D1D2F48A400319CE8 /* DatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9732746C1D2F48A400319CE8 /* DatabaseHelper.m */; };
 		973274711D2F599200319CE8 /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = 973274701D2F599200319CE8 /* Users.m */; };
@@ -34,6 +37,12 @@
 		970074F81D336E5300FFE6EE /* Clockes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clockes.m; sourceTree = "<group>"; };
 		970074FB1D338B1A00FFE6EE /* Movementes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movementes.h; sourceTree = "<group>"; };
 		970074FC1D338B1A00FFE6EE /* Movementes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movementes.m; sourceTree = "<group>"; };
+		970074FF1D34D08900FFE6EE /* Sleepes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sleepes.h; sourceTree = "<group>"; };
+		970075001D34D08900FFE6EE /* Sleepes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sleepes.m; sourceTree = "<group>"; };
+		970075031D34EE3100FFE6EE /* Charges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Charges.h; sourceTree = "<group>"; };
+		970075041D34EE3100FFE6EE /* Charges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Charges.m; sourceTree = "<group>"; };
+		970075071D34F29500FFE6EE /* Spendes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spendes.h; sourceTree = "<group>"; };
+		970075081D34F29500FFE6EE /* Spendes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spendes.m; sourceTree = "<group>"; };
 		973274621D2CA09F00319CE8 /* BLeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLeHelper.h; sourceTree = "<group>"; };
 		973274631D2CA09F00319CE8 /* BLeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLeHelper.m; sourceTree = "<group>"; };
 		9732746B1D2F48A400319CE8 /* DatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseHelper.h; sourceTree = "<group>"; };
@@ -110,6 +119,33 @@
 			name = Movement;
 			sourceTree = "<group>";
 		};
+		970074FE1D34D06500FFE6EE /* Sleep */ = {
+			isa = PBXGroup;
+			children = (
+				970074FF1D34D08900FFE6EE /* Sleepes.h */,
+				970075001D34D08900FFE6EE /* Sleepes.m */,
+			);
+			name = Sleep;
+			sourceTree = "<group>";
+		};
+		970075021D34EE1A00FFE6EE /* Charge */ = {
+			isa = PBXGroup;
+			children = (
+				970075031D34EE3100FFE6EE /* Charges.h */,
+				970075041D34EE3100FFE6EE /* Charges.m */,
+			);
+			name = Charge;
+			sourceTree = "<group>";
+		};
+		970075061D34F27B00FFE6EE /* Spend */ = {
+			isa = PBXGroup;
+			children = (
+				970075071D34F29500FFE6EE /* Spendes.h */,
+				970075081D34F29500FFE6EE /* Spendes.m */,
+			);
+			name = Spend;
+			sourceTree = "<group>";
+		};
 		973274611D2CA08000319CE8 /* Ble */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +167,9 @@
 		9732746E1D2F597000319CE8 /* Instance */ = {
 			isa = PBXGroup;
 			children = (
+				970075061D34F27B00FFE6EE /* Spend */,
+				970075021D34EE1A00FFE6EE /* Charge */,
+				970074FE1D34D06500FFE6EE /* Sleep */,
 				970074FA1D338AF600FFE6EE /* Movement */,
 				970074F61D336E3300FFE6EE /* Clock */,
 				973274731D2F983E00319CE8 /* Watches */,
@@ -260,6 +299,7 @@
 				TargetAttributes = {
 					975D0EAB1D2C95EE00480694 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = EJ37A56U46;
 					};
 				};
 			};
@@ -349,9 +389,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9732747E1D2F9DA700319CE8 /* Movement.m in Sources */,
+				970075051D34EE3100FFE6EE /* Charges.m in Sources */,
 				9732746D1D2F48A400319CE8 /* DatabaseHelper.m in Sources */,
 				973274761D2F985700319CE8 /* Watch.m in Sources */,
+				970075011D34D08900FFE6EE /* Sleepes.m in Sources */,
 				975D0EBD1D2C95EE00480694 /* testBleStable.xcdatamodeld in Sources */,
+				970075091D34F29500FFE6EE /* Spendes.m in Sources */,
 				970074F91D336E5300FFE6EE /* Clockes.m in Sources */,
 				975D0EB41D2C95EE00480694 /* AppDelegate.m in Sources */,
 				970074FD1D338B1A00FFE6EE /* Movementes.m in Sources */,
@@ -467,12 +510,14 @@
 			baseConfigurationReference = 805CB76C23131A6248F151DA /* Pods-testBleStable.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 淼 吴 (6K2ZT7B47Z)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = testBleStable/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.szrk.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -481,12 +526,14 @@
 			baseConfigurationReference = 33390DB2AEBA3DE7CD3080CF /* Pods-testBleStable.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 淼 吴 (6K2ZT7B47Z)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = testBleStable/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.szrk.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

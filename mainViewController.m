@@ -40,6 +40,10 @@
 //    [self.view addSubview:deviceTable];
 //    
 //    [self beganScann];
+//    
+    
+    
+    
     
     
 //测试数据库功能
@@ -135,14 +139,46 @@
 //运动步数
 
     Movementes *move = [[Movementes alloc] init];
-    move.mv_date        = [NSDate date];
-    move.mv_step        = @"10000";
-    move.mv_distance    = @"10";
-    move.mv_calorie     = @"20";
-    move.mv_goalStep    = @"50000";
+    NSDate * date = [NSDate date];
+    move.mv_date        = date;
+    move.mv_step        = @"1000000";
+    move.mv_distance    = @"1000000";
+    move.mv_calorie     = @"2000000";
+    move.mv_goalStep    = @"5000000";
     move.mv_watchUUID   = @"123456";
-    [db insertAMovementRecord:move];
+//    [db insertAMovementRecord:move];
+    
+//    Movementes *mv = [db getTodayMovementRecord];
+//    NSLog(@"mv = %@",mv);
+//
+//    NSArray *mvarr = [db getMovementInDays:5];
+//    NSLog(@"mvarr = %@",mvarr);
+//    
+//    move.mv_id = 5;
+//    BOOL bb = [db modifyMovementValue:move];
+
+    
+//睡眠记录
+    Sleepes *sleep = [[Sleepes alloc] init];
+    sleep.sp_date = [NSDate date];
+    sleep.sp_begintTime = @"22:00";
+    sleep.sp_endTime = @"6:00";
+    sleep.sp_clearTime = @"5";
+    sleep.sp_sleepDegree = @"deep";
+    sleep.sp_watchUUID = @"123456";
+    [db insertASleepRecord:sleep];
+    
+    NSArray *sparr = [db getSleepInDays:5];
+    NSLog(@"mvarr = %@",sparr);
+    
+
+//充值记录
+    
+
 }
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -308,18 +344,30 @@
 
 - (IBAction)testWriteValue:(id)sender {
     
-    Byte b1[20] = {0xc0,0x01,0x00,0x00,0x00,0x00,0x04,0x00,0x0e,0x1e,0x00,0x0a,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
+//    Byte b1[20] = {0xc0,0x01,0x00,0x00,0x00,0x00,0x04,0x00,0x0e,0x1e,0x00,0x0a,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
+//    
+//    Byte b2[5] = {0x00,0x00,0x15,0x05,0xc0};
+//    
+//    NSData *d1 =  [[NSData alloc] initWithBytes:b1 length:20];
+//    
+//    
+//    
+//    NSData *d2 =  [[NSData alloc] initWithBytes:b2 length:5];
+//    
+//    
+//    [bleHelp writeValueToDevice:d1];
+//    
+//    [bleHelp writeValueToDevice:d2];
     
-    Byte b2[5] = {0x00,0x00,0x15,0x05,0xc0};
     
-    NSData *d1 =  [[NSData alloc] initWithBytes:b1 length:20];
     
-    [bleHelp writeValueToDevice:d1];
+//    [self performSelector:@selector(testSend) withObject:nil afterDelay:1.0];
     
-    NSData *d2 =  [[NSData alloc] initWithBytes:b2 length:5];
     
-    [bleHelp writeValueToDevice:d2];
-    
+    Byte b3[11] = {0xc0,0x01,0x00,0x00,0x01,0x01,0x01,0x00,0x00,0x00,0xc0};
+    NSData *d3 =  [[NSData alloc] initWithBytes:b3 length:11];
+    [bleHelp writeValueToDevice:d3];
+//
 //    BankPayBase *bank = [[BankPayBase alloc] init];
 //    NSString *s = [bank sendMustData];
 //    NSData *d3 = [s dataUsingEncoding:NSUTF8StringEncoding];
@@ -327,8 +375,59 @@
 }
 
 
+- (void)testSend{
+//    Byte b3[11] = {0xc0,0x01,0x00,0x00,0x01,0x01,0x01,0x00,0x00,0x00,0xc0};
+//    NSData *d3 =  [[NSData alloc] initWithBytes:b3 length:11];
+//    [bleHelp writeValueToDevice:d3];
+    
+    Byte b1[20] = {0xc0,0x01,0x00,0x00,0x00,0x00,0x04,0x00,0x0e,0x1e,0x00,0x0a,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
+    
+    Byte b2[5] = {0x00,0x00,0x15,0x05,0xc0};
+    
+    NSData *d1 =  [[NSData alloc] initWithBytes:b1 length:20];
+    
+    
+    
+    NSData *d2 =  [[NSData alloc] initWithBytes:b2 length:5];
+    
+    
+    [bleHelp writeValueToDevice:d1];
+    
+    [bleHelp writeValueToDevice:d2];
+    
+}
+
+//nsdata转成16进制字符串
+- (NSString*)stringWithHexBytes2:(NSData *)sender {
+    static const char hexdigits[] = "0123456789ABCDEF";
+    const size_t numBytes = [sender length];
+    const unsigned char* bytes = [sender bytes];
+    char *strbuf = (char *)malloc(numBytes * 2 + 1);
+    char *hex = strbuf;
+    NSString *hexBytes = nil;
+    
+    for (int i = 0; i<numBytes; ++i) {
+        const unsigned char c = *bytes++;
+        *hex++ = hexdigits[(c >> 4) & 0xF];
+        *hex++ = hexdigits[(c ) & 0xF];
+    }
+    
+    *hex = 0;
+    hexBytes = [NSString stringWithUTF8String:strbuf];
+    
+    free(strbuf);
+    return hexBytes;
+}
+
+
 - (void)sendDataScuccess:(NSData *)backData{
     NSLog(@"发送数据后，设备返回的数据为 = %@",backData);
+    
+    NSString *s = [self stringWithHexBytes2:backData];
+    if([s hasSuffix:@"C0"]){
+    
+        [self testSend];
+    }
 }
 
 

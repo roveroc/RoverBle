@@ -49,8 +49,8 @@
         NSString *sleep = @"create table IF NOT EXISTS sleep (id integer primary key autoincrement,day text,beginTime text,\
         endTime text,clearTime text,sleepDegree text,watchUUID text,FOREIGN KEY(watchUUID) REFERENCES watch(uuid));";
         //运动表
-        NSString *movement = @"create table IF NOT EXISTS movement (id integer primary key autoincrement,day date,\
-        stepNumber text,distance text,goalStep text,calorie text,watchUUID text,\
+        NSString *movement = @"create table IF NOT EXISTS movement (id integer primary key autoincrement,\
+        day text,stepNumber text,distance text,goalStep text,calorie text,watchUUID text,\
         FOREIGN KEY(watchUUID) REFERENCES watch(uuid));";
         //银行卡绑定表
         NSString *bindCard = @"create table IF NOT EXISTS bindCard (id integer primary key autoincrement,bankName text,\
@@ -73,7 +73,7 @@
     return NO;
 }
 
-#pragma mark ------------------------------------------- 插入一条用户数据
+#pragma mark ------------------------------------------- <<<用户>>>  插入一条用户数据
 - (BOOL)insertAUserInfo:(Users *)user{
     
     if([db open]){
@@ -94,7 +94,7 @@
     return NO;
 }
 
-#pragma mark ------------------------------------------- 修改用户数据的某一个字段值
+#pragma mark ------------------------------------------- <<<用户>>>  修改用户数据的某一个字段值
 - (BOOL)modifyUserInfo:(NSString *)uid
              whichInfo:(UserInfo)info
               newValue:(NSString *)value{
@@ -161,7 +161,7 @@
     return NO;
 }
 
-#pragma mark ------------------------------------------- 修改用户数据的某一个字段值
+#pragma mark ------------------------------------------- <<<用户>>>  修改用户数据的某一个字段值
 - (Users *)getUserInfomation:(NSString *)name{
     Users *user = [[Users alloc] init];
     if([db open]){
@@ -187,7 +187,7 @@
 }
 
 
-#pragma mark ------------------------------------------- 修改用户数据的某一个字段值
+#pragma mark ------------------------------------------- <<<手环>>>  插入一条手环信息
 - (BOOL)insertAWatchInfo:(Watch *)watch{
     if([db open]){
         FMResultSet *s = [db executeQuery:@"select uuid from watch where uuid = ?",watch.uuid];
@@ -207,7 +207,7 @@
     return NO;
 }
 
-#pragma mark ------------------------------------------- 判断手环是否添加过
+#pragma mark ------------------------------------------- <<<手环>>>  判断手环是否添加过
 - (BOOL)wathcIsAdd:(NSString *)uuid{
     if([db open]){
         FMResultSet *s = [db executeQuery:@"select uuid from watch where uuid = ?",uuid];
@@ -221,7 +221,7 @@
     return NO;
 }
 
-#pragma mark ------------------------------------------- 获取某个用户绑定的手环 <可能有多个>
+#pragma mark ------------------------------------------- <<<手环>>>  获取某个用户绑定的手环 <可能有多个>
 - (NSArray *)getUserWatches:(NSString *)uid{
     NSMutableArray *arr = [[NSMutableArray alloc] init];
     if([db open]){
@@ -250,7 +250,7 @@
 }
 
 
-#pragma mark ------------------------------------------- 修改手环表的某个属性值
+#pragma mark ------------------------------------------- <<<手环>>>  修改手环表的某个属性值
 - (BOOL)modifyWatchInfo:(NSString *)uuid whichInfo:(WatchInfo)info newValue:(NSString *)value{
     if([db open]){
         switch (info) {
@@ -301,7 +301,7 @@
     return NO;
 }
 
-#pragma mark ------------------------------------------- 删除某个手环信息，应当删除其它关系表的记录
+#pragma mark ------------------------------------------- <<<手环>>>  删除某个手环信息，应当删除其它关系表的记录
 - (BOOL)deleteWatchInfo:(NSString *)uuid{
     if([db open]){
         BOOL flag = [db executeUpdate:@"delete from watch where uuid = ?",uuid];
@@ -322,7 +322,7 @@
     return NO;
 }
 
-#pragma mark ------------------------------------------- 添加一个闹钟
+#pragma mark ------------------------------------------- <<<闹钟>>>  添加一个闹钟
 - (BOOL)insertAClock:(Clockes *)clock{
     if([db open]){        
         BOOL flag = [db executeUpdate:@"insert into alarm (name,note,time,week,state,watchUUID) values (?,?,?,?,?,?)",clock.ck_name,clock.ck_note,clock.ck_date,clock.ck_week,clock.ck_state,clock.ck_watchUUID];
@@ -334,7 +334,7 @@
     return NO;
 }
 
-#pragma mark ------------------------------------------- 获取闹钟
+#pragma mark ------------------------------------------- <<<闹钟>>>  获取某个手环设置的所有闹钟
 - (NSArray *)getAllClock:(NSString *)watchUUID{
     NSMutableArray *arr = [[NSMutableArray alloc] init];
     if([db open]){
@@ -361,7 +361,7 @@
 }
 
 
-#pragma mark ------------------------------------------- 修改某一个闹钟信息
+#pragma mark ------------------------------------------- <<<闹钟>>>  修改某一个闹钟信息
 - (BOOL)modifyAClock:(Clockes *)clock{
     if([db open]){
         BOOL flag = [db executeUpdate:@"update alarm set name=?,note=?,time=?,week=?,state=?\
@@ -379,7 +379,7 @@
     return NO;
 }
 
-#pragma mark ------------------------------------------- 删除一个闹钟
+#pragma mark ------------------------------------------- <<<闹钟>>>  删除一个闹钟
 - (BOOL)deleteAClock:(int)cid{
     if([db open]){
         BOOL flag = [db executeUpdate:@"delete from alarm where id = ?",[NSNumber numberWithInt:cid]];
@@ -394,10 +394,18 @@
     return NO;
 }
 
-#pragma mark ------------------------------------------- 新增一条运动记录
+#pragma mark ------------------------------------------- <<<运动>>>  新增一条运动记录
 - (BOOL)insertAMovementRecord:(Movementes *)move{
     if([db open]){
-        BOOL flag = [db executeUpdate:@"insert into movement (day,stepNumber,distance,calorie,goalStep,watchUUID) values (?,?,?,?,?,?)",move.mv_date,move.mv_step,move.mv_distance,move.mv_calorie,move.mv_goalStep,move.mv_watchUUID];
+        //将传进日期只去年、月、日
+        NSTimeInterval timeValue = [move.mv_date timeIntervalSince1970];
+        NSString *timeString = [NSString stringWithFormat:@"%.0f", timeValue+8*60*60];
+        NSDate *nd = [NSDate dateWithTimeIntervalSince1970:[timeString intValue]];
+        NSDate *real = [NSDate dateWithYear:nd.year month:nd.month day:nd.day];
+        NSTimeInterval realValue = [real timeIntervalSince1970];
+        NSString *realStr = [NSString stringWithFormat:@"%.0f", realValue];
+        NSLog(@"插入的运动记录日期 = %@",real);
+        BOOL flag = [db executeUpdate:@"insert into movement (day,stepNumber,distance,calorie,goalStep,watchUUID) values (?,?,?,?,?,?)",realStr,move.mv_step,move.mv_distance,move.mv_calorie,move.mv_goalStep,move.mv_watchUUID];
         if(flag == NO){
             NSLog(@"添加手环闹钟 失败");
         }
@@ -406,32 +414,169 @@
     return NO;
 }
 
-#pragma mark ------------------------------------------- 获取当天的运动记录
-- (Movementes *)getTodayRecord{
-//    NSMutableArray *arr = [[NSMutableArray alloc] init];
-//    if([db open]){
-//        FMResultSet *s = [db executeQuery:@"select id,day,stepNumber,distance,calorie,goalStep,watchUUID from\
-//                          movement where"];
-//        while ([s next]) {
-//            Clockes *ck = [[Clockes alloc] init];
-//            ck.ck_id            = [s intForColumn:@"id"];
-//            ck.ck_name          = [s stringForColumn:@"name"];
-//            ck.ck_note          = [s stringForColumn:@"note"];
-//            ck.ck_date          = [s stringForColumn:@"time"];
-//            ck.ck_week          = [s stringForColumn:@"week"];
-//            ck.ck_state         = [s stringForColumn:@"state"];
-//            ck.ck_watchUUID     = [s stringForColumn:@"watchUUID"];
-//            [arr addObject:ck];
-//        }
-//    }else{
-//        NSLog(@"数据库打开出错");
-//        [db close];
-//        return nil;
-//    }
-//    [db close];
-//    return (NSArray *)arr;
-    return nil;
+#pragma mark ------------------------------------------- <<<运动>>>  获取当天的运动记录
+- (Movementes *)getTodayMovementRecord{
+    Movementes *mv = [[Movementes alloc] init];
+    if([db open]){
+        NSTimeInterval timeValue = [[NSDate date] timeIntervalSince1970];
+        NSString *timeString = [NSString stringWithFormat:@"%.0f", timeValue+8*60*60];
+        NSDate *nd = [NSDate dateWithTimeIntervalSince1970:[timeString intValue]];
+        NSDate *real = [NSDate dateWithYear:nd.year month:nd.month day:nd.day];
+        NSTimeInterval realValue = [real timeIntervalSince1970];
+        NSString *realStr = [NSString stringWithFormat:@"%.0f", realValue];
+        FMResultSet *s = [db executeQuery:@"select id,day,stepNumber,distance,calorie,goalStep,watchUUID from\
+                          movement where day = ?",realStr];
+        while ([s next]) {
+            mv.mv_id              = [s intForColumn:@"id"];
+            NSString *timeValue   = [s stringForColumn:@"day"];
+            NSDate *nd = [NSDate dateWithTimeIntervalSince1970:[timeValue intValue]];
+            mv.mv_date            = nd;
+            mv.mv_step            = [s stringForColumn:@"stepNumber"];
+            mv.mv_distance        = [s stringForColumn:@"distance"];
+            mv.mv_calorie         = [s stringForColumn:@"calorie"];
+            mv.mv_goalStep        = [s stringForColumn:@"goalStep"];
+            mv.mv_watchUUID       = [s stringForColumn:@"watchUUID"];
+        }
+    }else{
+        NSLog(@"数据库打开出错");
+        [db close];
+        return nil;
+    }
+    [db close];
+    return mv;
 }
+
+#pragma mark ------------------------------------------- <<<运动>>>  查询最近某些天的运动记录 <从今天往前推>
+- (NSArray *)getMovementRecordInDays:(int)days{
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    if([db open]){
+        NSTimeInterval timeValue = [[NSDate date] timeIntervalSince1970];
+        NSString *timeString = [NSString stringWithFormat:@"%.0f", timeValue+8*60*60];
+        NSDate *nd = [NSDate dateWithTimeIntervalSince1970:[timeString intValue]];
+        NSDate *real = [NSDate dateWithYear:nd.year month:nd.month day:nd.day];
+        NSDate *real_1 = [real dateBySubtractingDays:days];
+        NSTimeInterval realValue = [real_1 timeIntervalSince1970];
+        FMResultSet *s1 = [db executeQuery:@"select id ,day from movement"];
+        int index = 0;
+        while ([s1 next]) {
+            index    = [s1 intForColumn:@"id"];
+            int _day = [[s1 stringForColumn:@"day"] intValue];
+            if(_day > realValue)
+                break;
+        }
+        NSLog(@"查询时间点的间隔为 = %d",index);
+        
+        FMResultSet *s = [db executeQuery:@"select id,day,stepNumber,distance,calorie,goalStep,watchUUID from\
+                          movement where id >= ?",[NSNumber numberWithInt:index]];
+        while ([s next]) {
+            Movementes *mv = [[Movementes alloc] init];
+            mv.mv_id              = [s intForColumn:@"id"];
+            NSString *timeValue   = [s stringForColumn:@"day"];
+            NSDate *nd = [NSDate dateWithTimeIntervalSince1970:[timeValue intValue]];
+            mv.mv_date            = nd;
+            mv.mv_step            = [s stringForColumn:@"stepNumber"];
+            mv.mv_distance        = [s stringForColumn:@"distance"];
+            mv.mv_calorie         = [s stringForColumn:@"calorie"];
+            mv.mv_goalStep        = [s stringForColumn:@"goalStep"];
+            mv.mv_watchUUID       = [s stringForColumn:@"watchUUID"];
+            [arr addObject:mv];
+        }
+    }else{
+        NSLog(@"数据库打开出错");
+        [db close];
+        return nil;
+    }
+    [db close];
+    return (NSArray *)arr;
+}
+
+
+#pragma mark ------------------------------------------- <<<运动>>>  更新运动记录的相关值
+- (BOOL)modifyMovementValue:(Movementes *)move{
+    if([db open]){
+        BOOL flag = [db executeUpdate:@"update movement set stepNumber=?,distance=?,calorie=?,goalStep=?\
+                     where id = ?",move.mv_step,move.mv_distance,move.mv_calorie,move.mv_goalStep,
+                     [NSNumber numberWithInt:move.mv_id]];
+        if(flag == NO){
+            NSLog(@"修改运动记录 失败");
+        }
+    }else{
+        NSLog(@"数据库打开出错");
+        [db close];
+        return NO;
+    }
+    [db close];
+    return NO;
+}
+
+
+#pragma mark ------------------------------------------- <<<睡眠>>>  增加一条睡眠记录
+- (BOOL)insertASleepRecord:(Sleepes *)sleep{
+    if([db open]){
+        //将传进日期只去年、月、日
+        NSTimeInterval timeValue = [sleep.sp_date timeIntervalSince1970];
+        NSString *timeString = [NSString stringWithFormat:@"%.0f", timeValue+8*60*60];
+        NSDate *nd = [NSDate dateWithTimeIntervalSince1970:[timeString intValue]];
+        NSDate *real = [NSDate dateWithYear:nd.year month:nd.month day:nd.day];
+        NSTimeInterval realValue = [real timeIntervalSince1970];
+        NSString *realStr = [NSString stringWithFormat:@"%.0f", realValue];
+        NSLog(@"插入的 睡眠 记录日期 = %@",real);
+        BOOL flag = [db executeUpdate:@"insert into sleep (day,beginTime,endTime,clearTime,sleepDegree,\
+                     watchUUID) values (?,?,?,?,?,?)",realStr,sleep.sp_begintTime,sleep.sp_endTime,sleep.sp_clearTime,sleep.sp_sleepDegree,sleep.sp_watchUUID];
+        if(flag == NO){
+            NSLog(@"插入的 睡眠 记录 失败");
+        }
+    }
+    [db close];
+    return NO;
+}
+
+
+#pragma mark ------------------------------------------- <<<睡眠>>>   查询最近某些天的睡眠记录 <从今天往前推>
+- (NSArray *)getSleepRecordInDays:(int)days{
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    if([db open]){
+        NSTimeInterval timeValue = [[NSDate date] timeIntervalSince1970];
+        NSString *timeString = [NSString stringWithFormat:@"%.0f", timeValue+8*60*60];
+        NSDate *nd = [NSDate dateWithTimeIntervalSince1970:[timeString intValue]];
+        NSDate *real = [NSDate dateWithYear:nd.year month:nd.month day:nd.day];
+        NSDate *real_1 = [real dateBySubtractingDays:days];
+        NSTimeInterval realValue = [real_1 timeIntervalSince1970];
+        FMResultSet *s1 = [db executeQuery:@"select id ,day from sleep"];
+        int index = 0;
+        while ([s1 next]) {
+            index    = [s1 intForColumn:@"id"];
+            int _day = [[s1 stringForColumn:@"day"] intValue];
+            if(_day > realValue)
+                break;
+        }
+        NSLog(@"睡眠记录 -- 查询时间点的间隔为 = %d",index);
+        
+        FMResultSet *s = [db executeQuery:@"select id,day,beginTime,endTime,clearTime,sleepDegree,watchUUID from\
+                          sleep where id >= ?",[NSNumber numberWithInt:index]];
+        while ([s next]) {
+            Sleepes *sp = [[Sleepes alloc] init];
+            sp.sp_id              = [s intForColumn:@"id"];
+            NSString *timeValue   = [s stringForColumn:@"day"];
+            NSDate *nd = [NSDate dateWithTimeIntervalSince1970:[timeValue intValue]];
+            sp.sp_date            = nd;
+            sp.sp_begintTime      = [s stringForColumn:@"beginTime"];
+            sp.sp_endTime         = [s stringForColumn:@"endTime"];
+            sp.sp_clearTime       = [s stringForColumn:@"clearTime"];
+            sp.sp_sleepDegree     = [s stringForColumn:@"sleepDegree"];
+            sp.sp_watchUUID       = [s stringForColumn:@"watchUUID"];
+            [arr addObject:sp];
+        }
+    }else{
+        NSLog(@"数据库打开出错");
+        [db close];
+        return nil;
+    }
+    [db close];
+    return (NSArray *)arr;
+}
+
+
 
 
 @end

@@ -7,130 +7,182 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0EF8E9AA652DBE2745A7D5C8CD2E3BDE /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0AB758FF0ABC611CA92FA39E7BFD4A /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		0F8A8E0D6FAEBF758E0B4D620335F094 /* FMDatabasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DF89C0D2A55A7F98D297D135954126F /* FMDatabasePool.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		282081E035E7A843068E8BCC2E07C217 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B5054BF5054FF638F29567D65FD8B3A4 /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		313531CEDA0294311D87B4F4C3F073F4 /* FMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D0C05E4B23B997364C5D46FBEE54055 /* FMDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3D0F69C4CA35EB6A1F686BA88B19B4F6 /* FMDB-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B00A194E6CA106B15826EED8B2D3590 /* FMDB-dummy.m */; };
-		3DE5B88553AA4805D106F77CF543318B /* BabyOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = FA899CACE80C527F1D67BAB349FFE980 /* BabyOptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5B522B84B46CC2309AE90CFF54A4A095 /* BabyRhythm.h in Headers */ = {isa = PBXBuildFile; fileRef = AFA3D61970579B0F20E6A0BD3320E214 /* BabyRhythm.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5B6ACF8B3638B7574587AA8968F1C7E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC1F1998668C3B38A2D60F70AC442F9 /* Foundation.framework */; };
-		5CB45FC0151162EB258000388E25407A /* Pods-testBleStable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 75212908B1A5F8E4469F5D09EEED744F /* Pods-testBleStable-dummy.m */; };
-		5EB4F27B76513AE918BA5AE0868E87C8 /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C68570A8206054B682F5DD2ED633E1B /* MBProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08DDB39F398641BB7B5DE3E676A8170F /* DTTimePeriodCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = E411F25410E20E75B32395801301E762 /* DTTimePeriodCollection.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		0C118EA84A58649A57D7BDE7CF5BC9A7 /* NSDate+DateTools.m in Sources */ = {isa = PBXBuildFile; fileRef = C4884CE9A5B34AF636432DCD0BA4B877 /* NSDate+DateTools.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		0EF8E9AA652DBE2745A7D5C8CD2E3BDE /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7BEE0A006B144DB05C4621B3F41907 /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		0F8A8E0D6FAEBF758E0B4D620335F094 /* FMDatabasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = B3BFF1AEE232B551220B0C81C17DD348 /* FMDatabasePool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D0AFF8832D32DC4D0A35CE4FCDAD36C /* Pods-testBleStable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 75212908B1A5F8E4469F5D09EEED744F /* Pods-testBleStable-dummy.m */; };
+		282081E035E7A843068E8BCC2E07C217 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9459B6807165C4F708CC1592B6D999D0 /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		313531CEDA0294311D87B4F4C3F073F4 /* FMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = F2B48FE393EBCC4A443E9CC5DEDE8A66 /* FMDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3971D598267558B94FF665FECDA82111 /* DTTimePeriodChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 523FDBEA4D980AFE9435E2C3BE785500 /* DTTimePeriodChain.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		3D0F69C4CA35EB6A1F686BA88B19B4F6 /* FMDB-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC3A5270D550B7ACCEA117342443B19 /* FMDB-dummy.m */; };
+		3DE5B88553AA4805D106F77CF543318B /* BabyOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = E2666224DFBDF61031D737052F66ED48 /* BabyOptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B522B84B46CC2309AE90CFF54A4A095 /* BabyRhythm.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E88306B373805E5DC7356658EF527C7 /* BabyRhythm.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5EB4F27B76513AE918BA5AE0868E87C8 /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = CF39129DAD55B2C99F41D9BA049ECE4B /* MBProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C8E458BA1C159DDB8D24C215B0CFEE7 /* DTTimePeriodGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = B6D1BAABB2F180CFDFF39D821E08F975 /* DTTimePeriodGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70528E7EBDD7860D6CD13AB83B5FD74A /* DTError.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C1A7DABEAA92FB1F6EFAE253891E536 /* DTError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		70615C3DA42750EC222DC70C843F1FD8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC1F1998668C3B38A2D60F70AC442F9 /* Foundation.framework */; };
-		74A6911AF59E8364D2C735DE06F91171 /* BabyOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEE9A49FB0A808291482F30150C38E7 /* BabyOptions.m */; };
-		77D3158C91C6A2EE6FAB638E1595BCEF /* BabyCentralManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F3BFB5FBD5A44BEC76EC96535EF0D151 /* BabyCentralManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		82FC12F67E83874B93592218E9FB4CA0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5866133D7E498D2F4651E14E9C6D7293 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		74A6911AF59E8364D2C735DE06F91171 /* BabyOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB68BB3943976CBA5F3A5A6D4AEEFEC2 /* BabyOptions.m */; };
+		77D3158C91C6A2EE6FAB638E1595BCEF /* BabyCentralManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D750B6E8B0856A2518ABCC573E97AE7 /* BabyCentralManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		82FC12F67E83874B93592218E9FB4CA0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CF65641D2B8E1D076A2F6D4878BBE8B1 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		8DBAE4BE8A114ED7FA30E5811C7C9F15 /* DTTimePeriodGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD88BF0C28BBEB1F0FA9E5F84BC8F74 /* DTTimePeriodGroup.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		94FC4AE35C0F90BD510E491C20A2F830 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC1F1998668C3B38A2D60F70AC442F9 /* Foundation.framework */; };
-		A350C5704A1F233DAD830E081E00F8C1 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D039E8F9ABD68E63F56284E6AB8D93 /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		A5508ECB70966D5C20749050058D9BF2 /* BabyBluetooth-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D06D591B9DCA7F8612A9B10BF45F41AC /* BabyBluetooth-dummy.m */; };
+		9C3E095663A91660777D0C284588F704 /* DTTimePeriod.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D32A189D7DE2C62D67FF9851F2F250D /* DTTimePeriod.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9DA2609B71A9860982B0687802F8D6CB /* DTTimePeriodChain.h in Headers */ = {isa = PBXBuildFile; fileRef = D706819BD885593D399D45DC0BB76B08 /* DTTimePeriodChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A350C5704A1F233DAD830E081E00F8C1 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 27582C7CF29C960C83D6D1A891E0F756 /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A5508ECB70966D5C20749050058D9BF2 /* BabyBluetooth-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2900693AD3182BE1ED352B49A12278 /* BabyBluetooth-dummy.m */; };
 		A561A67BF274ABC8C70A4FFA23D56C59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC1F1998668C3B38A2D60F70AC442F9 /* Foundation.framework */; };
-		ABC9690281C09AC5BC20FBAC589281EF /* BabyToy.h in Headers */ = {isa = PBXBuildFile; fileRef = 381FD5F37C7A17AED74F1A4829EAB2D5 /* BabyToy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B418C9BDCF8C6BAC2E3942F157BB6D4C /* FMDatabaseAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D6726F1B5C90D113F031F291A25B851D /* FMDatabaseAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B4D224AFA59DD440B6B091AD0CA8669F /* BabyCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2521BD73C69BE0027D30FE7D6F7F3698 /* BabyCentralManager.m */; };
-		B635562255D32B567D9A5905800F8B59 /* BabyToy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5223856519FED2D15EED85F4F4EC3200 /* BabyToy.m */; };
+		A6B1DF59915B1E66F5B492E3DC382FBD /* DateTools-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 78620AB1F48FC0D17D795EAADA291BCF /* DateTools-dummy.m */; };
+		ABC9690281C09AC5BC20FBAC589281EF /* BabyToy.h in Headers */ = {isa = PBXBuildFile; fileRef = 18DE2EBCC1FDBE74F18AC3F0819DFC4E /* BabyToy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AEF39CCCA47BF107AEC783739E8D6844 /* DTConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E25A947C68AFDE32E2DD7ABA74D286CB /* DTConstants.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		B418C9BDCF8C6BAC2E3942F157BB6D4C /* FMDatabaseAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 73133DEDFCEC1038655D9586AF839AD1 /* FMDatabaseAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B41E7D31B34527CF5A001926809E5DC8 /* DTTimePeriodCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B0CA81E91E2056F3FC4207113FB24B6 /* DTTimePeriodCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4D224AFA59DD440B6B091AD0CA8669F /* BabyCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 238AC15D89D4525CE3B9833526B5A92F /* BabyCentralManager.m */; };
+		B635562255D32B567D9A5905800F8B59 /* BabyToy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4173316A5C4F50751F15C92561AC8DD8 /* BabyToy.m */; };
 		B79D1B6F33E6229F2C9C4E039A2C3D4A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C4A76B6AFC1ABC19A242A503DEE13E /* CoreGraphics.framework */; };
-		B9FE11E0A16AADCE3159CC6A34AD33AB /* BabyPeripheralManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F3C4290FBC15EF0CF36922F7B98A5408 /* BabyPeripheralManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BCDB36B9A94F3C0DB307C378E516B3D7 /* BabyDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5FDC1C4542A388C8125086F96EC68D /* BabyDefine.m */; };
-		C592FE3CC75E9D13BB5A6EAD8140FE16 /* BabyPeripheralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB50AF63ED58A331BCD6E36623A46CB1 /* BabyPeripheralManager.m */; };
-		CA027706DD6805766F1F4EC548E72440 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 680F3F91D57F5774D040D81F84CDA976 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		CE8AE68F51CFB5CF48F4491C09D71AA1 /* BabyBluetooth.h in Headers */ = {isa = PBXBuildFile; fileRef = 352DA734B6E78F8AED70135F611875E9 /* BabyBluetooth.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D0C5FF5485EAA2CDA03E9796B407697A /* FMDatabaseQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 27F03DBDC75B42D6F3BBA92362F4007D /* FMDatabaseQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D0D5FFE53407F16C9CD3D0ECF43ACE93 /* FMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF77F8330C899B3ACCF23B8BCF142FD /* FMDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D113DBF8235BB79A66307CE2F58EA200 /* BabySpeaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 32DB185B85FE3FD77B1147B5ECCCA654 /* BabySpeaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D3809223D86CBA71682E3B52704553C2 /* BabyRhythm.m in Sources */ = {isa = PBXBuildFile; fileRef = FE52AC53E060986C772A57DE364F297B /* BabyRhythm.m */; };
-		D3B2DC964E0E770DFA1C51471464BDCB /* BabyCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = 859E5BA0A6FF0FEBF1AC0A508C89F8F1 /* BabyCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D4A5607C40620EC5780DCD7CFC057A0F /* BabySpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = C30937D684C79355D9D42CA18D8CF1A8 /* BabySpeaker.m */; };
-		DD0D5FE3EA9A566DF827482FEC33A34F /* BabyBluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C985D91259F5D4314E1E6A056F54D67 /* BabyBluetooth.m */; };
-		DEFA3504695E9DFDE1177DAB22884470 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A0B26AF49E57C33E2AFCDF26EF8674 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		EA1BE238B31191A23D2696E9405E67BF /* BabyDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A772578227ED53BAB18DC6D82CE050C /* BabyDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F4DABDAFA4F968AF2DC679ED80FC0A83 /* BabyCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFEE48F8D63C8374F776BE9EB3570E9 /* BabyCallback.m */; };
-		F977B243321331B58666E9284634101A /* FMResultSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 767CD5143AF1FD3DB70406557101BAF1 /* FMResultSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FC214077677D4F02E03C6C85F774E028 /* MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3F554EF346BC2FFFA4698CE3737966 /* MBProgressHUD-dummy.m */; };
+		B9FE11E0A16AADCE3159CC6A34AD33AB /* BabyPeripheralManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 797B92BDD57391494BF3A85FA7783884 /* BabyPeripheralManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BCDB36B9A94F3C0DB307C378E516B3D7 /* BabyDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = C04619532F0C5B45B7807457E01E1F63 /* BabyDefine.m */; };
+		C027B7F806BF70B0EFCD1F256CCD9191 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC1F1998668C3B38A2D60F70AC442F9 /* Foundation.framework */; };
+		C592FE3CC75E9D13BB5A6EAD8140FE16 /* BabyPeripheralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2B0505BFC783478A4D4188C9E6F9D7 /* BabyPeripheralManager.m */; };
+		C6E277CA70064AE2D1F7361009CEB41B /* DateTools.h in Headers */ = {isa = PBXBuildFile; fileRef = BE886E52C97AE67E01A67BAC5E7246B3 /* DateTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C735B987C58B6A963062380943203B3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC1F1998668C3B38A2D60F70AC442F9 /* Foundation.framework */; };
+		CA027706DD6805766F1F4EC548E72440 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2D7B21C2CD2EC3613B8ABEB9E760DF /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		CE8AE68F51CFB5CF48F4491C09D71AA1 /* BabyBluetooth.h in Headers */ = {isa = PBXBuildFile; fileRef = EE138239BC7ECFB07C2A298768020515 /* BabyBluetooth.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0C5FF5485EAA2CDA03E9796B407697A /* FMDatabaseQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AA7D0BC9A758E2AABB5618CD50BA518A /* FMDatabaseQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0D5FFE53407F16C9CD3D0ECF43ACE93 /* FMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 75913CFF54E125AA8841D50B9CBDFBD9 /* FMDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D113DBF8235BB79A66307CE2F58EA200 /* BabySpeaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EC152518105D4AFF4917381DF5A3627 /* BabySpeaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3809223D86CBA71682E3B52704553C2 /* BabyRhythm.m in Sources */ = {isa = PBXBuildFile; fileRef = C75090B215EA614E73F22813878F0B88 /* BabyRhythm.m */; };
+		D3B2DC964E0E770DFA1C51471464BDCB /* BabyCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E24853817C386FCE411908170E05EB1 /* BabyCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4A5607C40620EC5780DCD7CFC057A0F /* BabySpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3CA83D9B8E4C095BC665199DE5FA7A /* BabySpeaker.m */; };
+		DD0D5FE3EA9A566DF827482FEC33A34F /* BabyBluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD449FFAE958068FCF5013ED77B2AB2 /* BabyBluetooth.m */; };
+		DE6303DE14BD8A3A264FE96645E8075A /* DTConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 94B5FD4366C84756A7DF686CC5AF86FB /* DTConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DEFA3504695E9DFDE1177DAB22884470 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CD55F93E45952996E964B45F3CF0FF /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		EA1BE238B31191A23D2696E9405E67BF /* BabyDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = D703E82BCEB386F98D4184E54E60F477 /* BabyDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EAD8F7B9B19071EB9D3EAA582AD7FAAF /* NSDate+DateTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FBF8814A4D11F0AAEFEAB6E73BB8DA5 /* NSDate+DateTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECDC9BE70EBB30AFA33016F779BB7E3D /* DTError.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C15854427B36128393BD1A9CCD7BC0E /* DTError.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		EF8197F179C59888AD8DC30DF746D15E /* DTTimePeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F59E8500444BF5CD9898A2CDACDCCD /* DTTimePeriod.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F4DABDAFA4F968AF2DC679ED80FC0A83 /* BabyCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 4887B50D12C5C121B0BAE241759C845E /* BabyCallback.m */; };
+		F977B243321331B58666E9284634101A /* FMResultSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 535D8BEE93DB9AF58FE86AD7B10744C2 /* FMResultSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FC214077677D4F02E03C6C85F774E028 /* MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 813615AF548D69A9C56DDD9A2FBBE09D /* MBProgressHUD-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		02F4B12F8CA30CC4B0CE64009AC025D2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FE2F1D7B9D9FCEA148517E4657B243F4;
-			remoteInfo = MBProgressHUD;
-		};
-		2C20B4BCC0E8859DED212C5DC0C775AF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9F12FB4A63E20F601CFB2E64A65B57C1;
-			remoteInfo = FMDB;
-		};
-		A19A7D064F523BB50E0E87E78F3F4332 /* PBXContainerItemProxy */ = {
+		1CD6A5F00D445FBF59972A9D8E80773E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1958ACEBCD9DFAE8B8240D003EB81EA2;
 			remoteInfo = BabyBluetooth;
 		};
+		304D65144E5E8B7D6E82832A15AF893E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F12FB4A63E20F601CFB2E64A65B57C1;
+			remoteInfo = FMDB;
+		};
+		59E028E67D6B08A40D67DF32FB0811EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE2F1D7B9D9FCEA148517E4657B243F4;
+			remoteInfo = MBProgressHUD;
+		};
+		7945C5DCC227103D0CBD9404FE3D4E79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 31FF44B5E2FF8CF00090950A8B67AFF6;
+			remoteInfo = DateTools;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0BA4E605B64A2C94090566095A732760 /* MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		08C3E411ED8D77D163EA90D7ED563707 /* DateTools.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = DateTools.bundle; path = DateTools/DateTools.bundle; sourceTree = "<group>"; };
+		0C1A7DABEAA92FB1F6EFAE253891E536 /* DTError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTError.h; path = DateTools/DTError.h; sourceTree = "<group>"; };
 		0CC1F1998668C3B38A2D60F70AC442F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		1B00A194E6CA106B15826EED8B2D3590 /* FMDB-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FMDB-dummy.m"; sourceTree = "<group>"; };
-		2023F1FDA5B12DA339BA9FE1783514EF /* libBabyBluetooth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBabyBluetooth.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		2521BD73C69BE0027D30FE7D6F7F3698 /* BabyCentralManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BabyCentralManager.m; path = Classes/objc/BabyCentralManager.m; sourceTree = "<group>"; };
-		27F03DBDC75B42D6F3BBA92362F4007D /* FMDatabaseQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = src/fmdb/FMDatabaseQueue.h; sourceTree = "<group>"; };
-		29A47CF058A82B2970A5EFF55CF6BA07 /* FMDB-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FMDB-prefix.pch"; sourceTree = "<group>"; };
-		2A772578227ED53BAB18DC6D82CE050C /* BabyDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BabyDefine.h; path = Classes/objc/BabyDefine.h; sourceTree = "<group>"; };
-		2E4977D6CB3B84F858A2009021F5AEBF /* FMDB.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FMDB.xcconfig; sourceTree = "<group>"; };
-		32DB185B85FE3FD77B1147B5ECCCA654 /* BabySpeaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BabySpeaker.h; path = Classes/objc/BabySpeaker.h; sourceTree = "<group>"; };
-		352DA734B6E78F8AED70135F611875E9 /* BabyBluetooth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BabyBluetooth.h; path = Classes/objc/BabyBluetooth.h; sourceTree = "<group>"; };
-		35BB7276E21CF4AD96C7AD0050D3354B /* BabyBluetooth-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BabyBluetooth-prefix.pch"; sourceTree = "<group>"; };
-		381FD5F37C7A17AED74F1A4829EAB2D5 /* BabyToy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BabyToy.h; path = Classes/objc/BabyToy.h; sourceTree = "<group>"; };
-		4187EE84166339EDB134FF16454E93F3 /* libMBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMBProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		4AEE9A49FB0A808291482F30150C38E7 /* BabyOptions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BabyOptions.m; path = Classes/objc/BabyOptions.m; sourceTree = "<group>"; };
-		5223856519FED2D15EED85F4F4EC3200 /* BabyToy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BabyToy.m; path = Classes/objc/BabyToy.m; sourceTree = "<group>"; };
+		18DE2EBCC1FDBE74F18AC3F0819DFC4E /* BabyToy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BabyToy.h; path = Classes/objc/BabyToy.h; sourceTree = "<group>"; };
+		238AC15D89D4525CE3B9833526B5A92F /* BabyCentralManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BabyCentralManager.m; path = Classes/objc/BabyCentralManager.m; sourceTree = "<group>"; };
+		27582C7CF29C960C83D6D1A891E0F756 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = src/fmdb/FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		2D2495565A53B4ADDC6E1C5FBD587D53 /* FMDB.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FMDB.xcconfig; sourceTree = "<group>"; };
+		300FD85C3AD6393DFFC8DA215010E4C1 /* libBabyBluetooth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBabyBluetooth.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B0CA81E91E2056F3FC4207113FB24B6 /* DTTimePeriodCollection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTimePeriodCollection.h; path = DateTools/DTTimePeriodCollection.h; sourceTree = "<group>"; };
+		3B3CA83D9B8E4C095BC665199DE5FA7A /* BabySpeaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BabySpeaker.m; path = Classes/objc/BabySpeaker.m; sourceTree = "<group>"; };
+		4173316A5C4F50751F15C92561AC8DD8 /* BabyToy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BabyToy.m; path = Classes/objc/BabyToy.m; sourceTree = "<group>"; };
+		42DD70DD91DB74F7BD92BD71DA1E85C8 /* MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		46F59E8500444BF5CD9898A2CDACDCCD /* DTTimePeriod.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTTimePeriod.m; path = DateTools/DTTimePeriod.m; sourceTree = "<group>"; };
+		4887B50D12C5C121B0BAE241759C845E /* BabyCallback.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BabyCallback.m; path = Classes/objc/BabyCallback.m; sourceTree = "<group>"; };
+		4A2D7B21C2CD2EC3613B8ABEB9E760DF /* FMDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = src/fmdb/FMDatabase.m; sourceTree = "<group>"; };
+		4B7BEE0A006B144DB05C4621B3F41907 /* FMDatabasePool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = src/fmdb/FMDatabasePool.m; sourceTree = "<group>"; };
+		4D750B6E8B0856A2518ABCC573E97AE7 /* BabyCentralManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BabyCentralManager.h; path = Classes/objc/BabyCentralManager.h; sourceTree = "<group>"; };
+		523FDBEA4D980AFE9435E2C3BE785500 /* DTTimePeriodChain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTTimePeriodChain.m; path = DateTools/DTTimePeriodChain.m; sourceTree = "<group>"; };
 		533969177526E0932A0AC2F08C596242 /* Pods-testBleStable-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-testBleStable-resources.sh"; sourceTree = "<group>"; };
+		535D8BEE93DB9AF58FE86AD7B10744C2 /* FMResultSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = src/fmdb/FMResultSet.h; sourceTree = "<group>"; };
 		55FAAC2A8DB6EEDAFBE0339E314D9675 /* Pods-testBleStable-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-testBleStable-frameworks.sh"; sourceTree = "<group>"; };
-		5866133D7E498D2F4651E14E9C6D7293 /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		5A5FDC1C4542A388C8125086F96EC68D /* BabyDefine.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BabyDefine.m; path = Classes/objc/BabyDefine.m; sourceTree = "<group>"; };
-		5C68570A8206054B682F5DD2ED633E1B /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		5DF89C0D2A55A7F98D297D135954126F /* FMDatabasePool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = src/fmdb/FMDatabasePool.h; sourceTree = "<group>"; };
-		65A0B26AF49E57C33E2AFCDF26EF8674 /* FMResultSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = src/fmdb/FMResultSet.m; sourceTree = "<group>"; };
-		680F3F91D57F5774D040D81F84CDA976 /* FMDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = src/fmdb/FMDatabase.m; sourceTree = "<group>"; };
+		564E2E026954FB60360E9B689D92D4BC /* libDateTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDateTools.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E24853817C386FCE411908170E05EB1 /* BabyCallback.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BabyCallback.h; path = Classes/objc/BabyCallback.h; sourceTree = "<group>"; };
+		5E88306B373805E5DC7356658EF527C7 /* BabyRhythm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BabyRhythm.h; path = Classes/objc/BabyRhythm.h; sourceTree = "<group>"; };
+		5FBF8814A4D11F0AAEFEAB6E73BB8DA5 /* NSDate+DateTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+DateTools.h"; path = "DateTools/NSDate+DateTools.h"; sourceTree = "<group>"; };
 		690FF846F5F2704D8D1D1F728EE4C0AD /* Pods-testBleStable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-testBleStable.debug.xcconfig"; sourceTree = "<group>"; };
 		6B997E769BE1A637CCC5D9DE0981431E /* Pods-testBleStable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-testBleStable.release.xcconfig"; sourceTree = "<group>"; };
-		6D0C05E4B23B997364C5D46FBEE54055 /* FMDB.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = src/fmdb/FMDB.h; sourceTree = "<group>"; };
+		6D32A189D7DE2C62D67FF9851F2F250D /* DTTimePeriod.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTimePeriod.h; path = DateTools/DTTimePeriod.h; sourceTree = "<group>"; };
+		73133DEDFCEC1038655D9586AF839AD1 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = src/fmdb/FMDatabaseAdditions.h; sourceTree = "<group>"; };
 		75212908B1A5F8E4469F5D09EEED744F /* Pods-testBleStable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-testBleStable-dummy.m"; sourceTree = "<group>"; };
-		767CD5143AF1FD3DB70406557101BAF1 /* FMResultSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = src/fmdb/FMResultSet.h; sourceTree = "<group>"; };
-		859E5BA0A6FF0FEBF1AC0A508C89F8F1 /* BabyCallback.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BabyCallback.h; path = Classes/objc/BabyCallback.h; sourceTree = "<group>"; };
-		8C861B516505D44DFA452078F2326794 /* BabyBluetooth.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BabyBluetooth.xcconfig; sourceTree = "<group>"; };
-		8C985D91259F5D4314E1E6A056F54D67 /* BabyBluetooth.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BabyBluetooth.m; path = Classes/objc/BabyBluetooth.m; sourceTree = "<group>"; };
-		8E3F554EF346BC2FFFA4698CE3737966 /* MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		75913CFF54E125AA8841D50B9CBDFBD9 /* FMDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = src/fmdb/FMDatabase.h; sourceTree = "<group>"; };
+		78620AB1F48FC0D17D795EAADA291BCF /* DateTools-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DateTools-dummy.m"; sourceTree = "<group>"; };
+		797B92BDD57391494BF3A85FA7783884 /* BabyPeripheralManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BabyPeripheralManager.h; path = Classes/objc/BabyPeripheralManager.h; sourceTree = "<group>"; };
+		79A52E854A8CC15DCB3D12690AC58746 /* FMDB-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FMDB-prefix.pch"; sourceTree = "<group>"; };
+		7BC3A5270D550B7ACCEA117342443B19 /* FMDB-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FMDB-dummy.m"; sourceTree = "<group>"; };
+		7C15854427B36128393BD1A9CCD7BC0E /* DTError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTError.m; path = DateTools/DTError.m; sourceTree = "<group>"; };
+		7E2900693AD3182BE1ED352B49A12278 /* BabyBluetooth-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BabyBluetooth-dummy.m"; sourceTree = "<group>"; };
+		7F66F9BB7AA0DC936CB39F676873C811 /* DateTools.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DateTools.xcconfig; sourceTree = "<group>"; };
+		813615AF548D69A9C56DDD9A2FBBE09D /* MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
 		8E4F225D19D4B6EFF2E265A8A371A07E /* Pods-testBleStable-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-testBleStable-acknowledgements.markdown"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; };
-		95D039E8F9ABD68E63F56284E6AB8D93 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = src/fmdb/FMDatabaseAdditions.m; sourceTree = "<group>"; };
-		9AFEE48F8D63C8374F776BE9EB3570E9 /* BabyCallback.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BabyCallback.m; path = Classes/objc/BabyCallback.m; sourceTree = "<group>"; };
-		AD75DC49E96F297D5A432D8A363E3708 /* MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.xcconfig; sourceTree = "<group>"; };
-		AE927E4AA0CB3B62FADE50C932607640 /* libFMDB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFMDB.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFA3D61970579B0F20E6A0BD3320E214 /* BabyRhythm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BabyRhythm.h; path = Classes/objc/BabyRhythm.h; sourceTree = "<group>"; };
+		8EC152518105D4AFF4917381DF5A3627 /* BabySpeaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BabySpeaker.h; path = Classes/objc/BabySpeaker.h; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9459B6807165C4F708CC1592B6D999D0 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = src/fmdb/FMDatabaseQueue.m; sourceTree = "<group>"; };
+		94B5FD4366C84756A7DF686CC5AF86FB /* DTConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTConstants.h; path = DateTools/DTConstants.h; sourceTree = "<group>"; };
+		9BD88BF0C28BBEB1F0FA9E5F84BC8F74 /* DTTimePeriodGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTTimePeriodGroup.m; path = DateTools/DTTimePeriodGroup.m; sourceTree = "<group>"; };
+		AA7D0BC9A758E2AABB5618CD50BA518A /* FMDatabaseQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = src/fmdb/FMDatabaseQueue.h; sourceTree = "<group>"; };
 		B2C4A76B6AFC1ABC19A242A503DEE13E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		B5054BF5054FF638F29567D65FD8B3A4 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = src/fmdb/FMDatabaseQueue.m; sourceTree = "<group>"; };
-		C30937D684C79355D9D42CA18D8CF1A8 /* BabySpeaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BabySpeaker.m; path = Classes/objc/BabySpeaker.m; sourceTree = "<group>"; };
-		CB50AF63ED58A331BCD6E36623A46CB1 /* BabyPeripheralManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BabyPeripheralManager.m; path = Classes/objc/BabyPeripheralManager.m; sourceTree = "<group>"; };
-		CBF77F8330C899B3ACCF23B8BCF142FD /* FMDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = src/fmdb/FMDatabase.h; sourceTree = "<group>"; };
+		B3BFF1AEE232B551220B0C81C17DD348 /* FMDatabasePool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = src/fmdb/FMDatabasePool.h; sourceTree = "<group>"; };
+		B6D1BAABB2F180CFDFF39D821E08F975 /* DTTimePeriodGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTimePeriodGroup.h; path = DateTools/DTTimePeriodGroup.h; sourceTree = "<group>"; };
+		B969ACE04C8AE74ACB36EFA1E69AAFAE /* BabyBluetooth-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BabyBluetooth-prefix.pch"; sourceTree = "<group>"; };
+		BE886E52C97AE67E01A67BAC5E7246B3 /* DateTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DateTools.h; path = DateTools/DateTools.h; sourceTree = "<group>"; };
+		C04619532F0C5B45B7807457E01E1F63 /* BabyDefine.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BabyDefine.m; path = Classes/objc/BabyDefine.m; sourceTree = "<group>"; };
+		C4884CE9A5B34AF636432DCD0BA4B877 /* NSDate+DateTools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+DateTools.m"; path = "DateTools/NSDate+DateTools.m"; sourceTree = "<group>"; };
+		C4CDC19D43E23B0366313790D3D6231E /* libPods-testBleStable.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-testBleStable.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C75090B215EA614E73F22813878F0B88 /* BabyRhythm.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BabyRhythm.m; path = Classes/objc/BabyRhythm.m; sourceTree = "<group>"; };
 		CD7F57C06B734B979E3F49680E896950 /* Pods-testBleStable-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-testBleStable-acknowledgements.plist"; sourceTree = "<group>"; };
-		D06D591B9DCA7F8612A9B10BF45F41AC /* BabyBluetooth-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BabyBluetooth-dummy.m"; sourceTree = "<group>"; };
-		D6726F1B5C90D113F031F291A25B851D /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = src/fmdb/FMDatabaseAdditions.h; sourceTree = "<group>"; };
-		EA0AB758FF0ABC611CA92FA39E7BFD4A /* FMDatabasePool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = src/fmdb/FMDatabasePool.m; sourceTree = "<group>"; };
-		F1E184CBF8D70F372681F9BB67E7C599 /* libPods-testBleStable.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-testBleStable.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3BFB5FBD5A44BEC76EC96535EF0D151 /* BabyCentralManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BabyCentralManager.h; path = Classes/objc/BabyCentralManager.h; sourceTree = "<group>"; };
-		F3C4290FBC15EF0CF36922F7B98A5408 /* BabyPeripheralManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BabyPeripheralManager.h; path = Classes/objc/BabyPeripheralManager.h; sourceTree = "<group>"; };
-		FA899CACE80C527F1D67BAB349FFE980 /* BabyOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BabyOptions.h; path = Classes/objc/BabyOptions.h; sourceTree = "<group>"; };
-		FE52AC53E060986C772A57DE364F297B /* BabyRhythm.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BabyRhythm.m; path = Classes/objc/BabyRhythm.m; sourceTree = "<group>"; };
+		CF39129DAD55B2C99F41D9BA049ECE4B /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		CF65641D2B8E1D076A2F6D4878BBE8B1 /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		D703E82BCEB386F98D4184E54E60F477 /* BabyDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BabyDefine.h; path = Classes/objc/BabyDefine.h; sourceTree = "<group>"; };
+		D706819BD885593D399D45DC0BB76B08 /* DTTimePeriodChain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTimePeriodChain.h; path = DateTools/DTTimePeriodChain.h; sourceTree = "<group>"; };
+		DAD449FFAE958068FCF5013ED77B2AB2 /* BabyBluetooth.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BabyBluetooth.m; path = Classes/objc/BabyBluetooth.m; sourceTree = "<group>"; };
+		DB6DF5FC8370A3DD3DF787540EFCA94E /* BabyBluetooth.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BabyBluetooth.xcconfig; sourceTree = "<group>"; };
+		DF2B0505BFC783478A4D4188C9E6F9D7 /* BabyPeripheralManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BabyPeripheralManager.m; path = Classes/objc/BabyPeripheralManager.m; sourceTree = "<group>"; };
+		E25A947C68AFDE32E2DD7ABA74D286CB /* DTConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTConstants.m; path = DateTools/DTConstants.m; sourceTree = "<group>"; };
+		E2666224DFBDF61031D737052F66ED48 /* BabyOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BabyOptions.h; path = Classes/objc/BabyOptions.h; sourceTree = "<group>"; };
+		E411F25410E20E75B32395801301E762 /* DTTimePeriodCollection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTTimePeriodCollection.m; path = DateTools/DTTimePeriodCollection.m; sourceTree = "<group>"; };
+		E9976EE87A51F67D16A1CE22335EF9DA /* DateTools-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DateTools-prefix.pch"; sourceTree = "<group>"; };
+		EE138239BC7ECFB07C2A298768020515 /* BabyBluetooth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BabyBluetooth.h; path = Classes/objc/BabyBluetooth.h; sourceTree = "<group>"; };
+		F2B48FE393EBCC4A443E9CC5DEDE8A66 /* FMDB.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = src/fmdb/FMDB.h; sourceTree = "<group>"; };
+		F3C7287B4A16BED61DAA5E1E73DF58A3 /* MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.xcconfig; sourceTree = "<group>"; };
+		F4CD55F93E45952996E964B45F3CF0FF /* FMResultSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = src/fmdb/FMResultSet.m; sourceTree = "<group>"; };
+		F9EC8A55CD81DDDDBD50045C2E5B845E /* libMBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMBProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA4919046CE094A3E1AEA2303E652D88 /* libFMDB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFMDB.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB68BB3943976CBA5F3A5A6D4AEEFEC2 /* BabyOptions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BabyOptions.m; path = Classes/objc/BabyOptions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		530FD65C498B21E3CC0C04855EB59B4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C735B987C58B6A963062380943203B3F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84AF63084FFE4472EFC6131BD113B13D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -139,19 +191,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B5B5DBFA55BCE7B35174053117324B20 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5B6ACF8B3638B7574587AA8968F1C7E9 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B88BE58B68995E7471BD226AB72606D1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				70615C3DA42750EC222DC70C843F1FD8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D25B6C898591D5F8B91BDDA9C1F058B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C027B7F806BF70B0EFCD1F256CCD9191 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,24 +228,86 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		247D325755D9BF5477F2B3E8D67AB0EB /* Support Files */ = {
+		0A21E2C2B06F485873FCAB3DCE6AC403 /* DateTools */ = {
 			isa = PBXGroup;
 			children = (
-				2E4977D6CB3B84F858A2009021F5AEBF /* FMDB.xcconfig */,
-				1B00A194E6CA106B15826EED8B2D3590 /* FMDB-dummy.m */,
-				29A47CF058A82B2970A5EFF55CF6BA07 /* FMDB-prefix.pch */,
+				BE886E52C97AE67E01A67BAC5E7246B3 /* DateTools.h */,
+				94B5FD4366C84756A7DF686CC5AF86FB /* DTConstants.h */,
+				E25A947C68AFDE32E2DD7ABA74D286CB /* DTConstants.m */,
+				0C1A7DABEAA92FB1F6EFAE253891E536 /* DTError.h */,
+				7C15854427B36128393BD1A9CCD7BC0E /* DTError.m */,
+				6D32A189D7DE2C62D67FF9851F2F250D /* DTTimePeriod.h */,
+				46F59E8500444BF5CD9898A2CDACDCCD /* DTTimePeriod.m */,
+				D706819BD885593D399D45DC0BB76B08 /* DTTimePeriodChain.h */,
+				523FDBEA4D980AFE9435E2C3BE785500 /* DTTimePeriodChain.m */,
+				3B0CA81E91E2056F3FC4207113FB24B6 /* DTTimePeriodCollection.h */,
+				E411F25410E20E75B32395801301E762 /* DTTimePeriodCollection.m */,
+				B6D1BAABB2F180CFDFF39D821E08F975 /* DTTimePeriodGroup.h */,
+				9BD88BF0C28BBEB1F0FA9E5F84BC8F74 /* DTTimePeriodGroup.m */,
+				5FBF8814A4D11F0AAEFEAB6E73BB8DA5 /* NSDate+DateTools.h */,
+				C4884CE9A5B34AF636432DCD0BA4B877 /* NSDate+DateTools.m */,
+				1963A094A4876F21FBD24EDE08DF3ED4 /* Resources */,
+				781B598F18B37198CBF01F75F12F34C5 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/FMDB";
+			path = DateTools;
 			sourceTree = "<group>";
 		};
-		2DA3A0640C64032614B320781CF934CE /* Products */ = {
+		1963A094A4876F21FBD24EDE08DF3ED4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2023F1FDA5B12DA339BA9FE1783514EF /* libBabyBluetooth.a */,
-				AE927E4AA0CB3B62FADE50C932607640 /* libFMDB.a */,
-				4187EE84166339EDB134FF16454E93F3 /* libMBProgressHUD.a */,
-				F1E184CBF8D70F372681F9BB67E7C599 /* libPods-testBleStable.a */,
+				08C3E411ED8D77D163EA90D7ED563707 /* DateTools.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		27B5A162DE5ED17308E2FC553F643CB5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB6DF5FC8370A3DD3DF787540EFCA94E /* BabyBluetooth.xcconfig */,
+				7E2900693AD3182BE1ED352B49A12278 /* BabyBluetooth-dummy.m */,
+				B969ACE04C8AE74ACB36EFA1E69AAFAE /* BabyBluetooth-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/BabyBluetooth";
+			sourceTree = "<group>";
+		};
+		2860043CEECD0F726522B60D90DF329F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F3C7287B4A16BED61DAA5E1E73DF58A3 /* MBProgressHUD.xcconfig */,
+				813615AF548D69A9C56DDD9A2FBBE09D /* MBProgressHUD-dummy.m */,
+				42DD70DD91DB74F7BD92BD71DA1E85C8 /* MBProgressHUD-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MBProgressHUD";
+			sourceTree = "<group>";
+		};
+		28C5CF300E16C3E33E9D7114CA4CBB86 /* standard */ = {
+			isa = PBXGroup;
+			children = (
+				75913CFF54E125AA8841D50B9CBDFBD9 /* FMDatabase.h */,
+				4A2D7B21C2CD2EC3613B8ABEB9E760DF /* FMDatabase.m */,
+				73133DEDFCEC1038655D9586AF839AD1 /* FMDatabaseAdditions.h */,
+				27582C7CF29C960C83D6D1A891E0F756 /* FMDatabaseAdditions.m */,
+				B3BFF1AEE232B551220B0C81C17DD348 /* FMDatabasePool.h */,
+				4B7BEE0A006B144DB05C4621B3F41907 /* FMDatabasePool.m */,
+				AA7D0BC9A758E2AABB5618CD50BA518A /* FMDatabaseQueue.h */,
+				9459B6807165C4F708CC1592B6D999D0 /* FMDatabaseQueue.m */,
+				F2B48FE393EBCC4A443E9CC5DEDE8A66 /* FMDB.h */,
+				535D8BEE93DB9AF58FE86AD7B10744C2 /* FMResultSet.h */,
+				F4CD55F93E45952996E964B45F3CF0FF /* FMResultSet.m */,
+			);
+			name = standard;
+			sourceTree = "<group>";
+		};
+		2CBD947D541FC0FD3E99D8298621CD6D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				300FD85C3AD6393DFFC8DA215010E4C1 /* libBabyBluetooth.a */,
+				564E2E026954FB60360E9B689D92D4BC /* libDateTools.a */,
+				FA4919046CE094A3E1AEA2303E652D88 /* libFMDB.a */,
+				F9EC8A55CD81DDDDBD50045C2E5B845E /* libMBProgressHUD.a */,
+				C4CDC19D43E23B0366313790D3D6231E /* libPods-testBleStable.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,22 +320,50 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		58D749BB4106E6902769661CCD268B47 /* standard */ = {
+		4B09961438BEC52DDC4EDC275980B5B5 /* BabyBluetooth */ = {
 			isa = PBXGroup;
 			children = (
-				CBF77F8330C899B3ACCF23B8BCF142FD /* FMDatabase.h */,
-				680F3F91D57F5774D040D81F84CDA976 /* FMDatabase.m */,
-				D6726F1B5C90D113F031F291A25B851D /* FMDatabaseAdditions.h */,
-				95D039E8F9ABD68E63F56284E6AB8D93 /* FMDatabaseAdditions.m */,
-				5DF89C0D2A55A7F98D297D135954126F /* FMDatabasePool.h */,
-				EA0AB758FF0ABC611CA92FA39E7BFD4A /* FMDatabasePool.m */,
-				27F03DBDC75B42D6F3BBA92362F4007D /* FMDatabaseQueue.h */,
-				B5054BF5054FF638F29567D65FD8B3A4 /* FMDatabaseQueue.m */,
-				6D0C05E4B23B997364C5D46FBEE54055 /* FMDB.h */,
-				767CD5143AF1FD3DB70406557101BAF1 /* FMResultSet.h */,
-				65A0B26AF49E57C33E2AFCDF26EF8674 /* FMResultSet.m */,
+				EE138239BC7ECFB07C2A298768020515 /* BabyBluetooth.h */,
+				DAD449FFAE958068FCF5013ED77B2AB2 /* BabyBluetooth.m */,
+				5E24853817C386FCE411908170E05EB1 /* BabyCallback.h */,
+				4887B50D12C5C121B0BAE241759C845E /* BabyCallback.m */,
+				4D750B6E8B0856A2518ABCC573E97AE7 /* BabyCentralManager.h */,
+				238AC15D89D4525CE3B9833526B5A92F /* BabyCentralManager.m */,
+				D703E82BCEB386F98D4184E54E60F477 /* BabyDefine.h */,
+				C04619532F0C5B45B7807457E01E1F63 /* BabyDefine.m */,
+				E2666224DFBDF61031D737052F66ED48 /* BabyOptions.h */,
+				FB68BB3943976CBA5F3A5A6D4AEEFEC2 /* BabyOptions.m */,
+				797B92BDD57391494BF3A85FA7783884 /* BabyPeripheralManager.h */,
+				DF2B0505BFC783478A4D4188C9E6F9D7 /* BabyPeripheralManager.m */,
+				5E88306B373805E5DC7356658EF527C7 /* BabyRhythm.h */,
+				C75090B215EA614E73F22813878F0B88 /* BabyRhythm.m */,
+				8EC152518105D4AFF4917381DF5A3627 /* BabySpeaker.h */,
+				3B3CA83D9B8E4C095BC665199DE5FA7A /* BabySpeaker.m */,
+				18DE2EBCC1FDBE74F18AC3F0819DFC4E /* BabyToy.h */,
+				4173316A5C4F50751F15C92561AC8DD8 /* BabyToy.m */,
+				27B5A162DE5ED17308E2FC553F643CB5 /* Support Files */,
 			);
-			name = standard;
+			path = BabyBluetooth;
+			sourceTree = "<group>";
+		};
+		5660E4FEEDABA35340D387D04312D51B /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				28C5CF300E16C3E33E9D7114CA4CBB86 /* standard */,
+				583C8D42AF5BFB4D66A138784688BBB1 /* Support Files */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		583C8D42AF5BFB4D66A138784688BBB1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2D2495565A53B4ADDC6E1C5FBD587D53 /* FMDB.xcconfig */,
+				7BC3A5270D550B7ACCEA117342443B19 /* FMDB-dummy.m */,
+				79A52E854A8CC15DCB3D12690AC58746 /* FMDB-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FMDB";
 			sourceTree = "<group>";
 		};
 		5D4ED1A2D5F22078CC446C0DC715DB3C /* Targets Support Files */ = {
@@ -232,23 +374,15 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		67A984E6F5156CAB3FAD1600DD19E24F /* FMDB */ = {
+		781B598F18B37198CBF01F75F12F34C5 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				58D749BB4106E6902769661CCD268B47 /* standard */,
-				247D325755D9BF5477F2B3E8D67AB0EB /* Support Files */,
+				7F66F9BB7AA0DC936CB39F676873C811 /* DateTools.xcconfig */,
+				78620AB1F48FC0D17D795EAADA291BCF /* DateTools-dummy.m */,
+				E9976EE87A51F67D16A1CE22335EF9DA /* DateTools-prefix.pch */,
 			);
-			path = FMDB;
-			sourceTree = "<group>";
-		};
-		6F74F17B6A8D9126E3717CDEF3F8C1C2 /* MBProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				5C68570A8206054B682F5DD2ED633E1B /* MBProgressHUD.h */,
-				5866133D7E498D2F4651E14E9C6D7293 /* MBProgressHUD.m */,
-				CA1CD610AC99CCB9D4E6B07AB2A9B0D7 /* Support Files */,
-			);
-			path = MBProgressHUD;
+			name = "Support Files";
+			path = "../Target Support Files/DateTools";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -256,68 +390,31 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				C138C7E0F32235724FC5AE893C141FE9 /* Pods */,
-				2DA3A0640C64032614B320781CF934CE /* Products */,
+				92535A6980FC7EADA63689C78DAF3F1A /* Pods */,
+				2CBD947D541FC0FD3E99D8298621CD6D /* Products */,
 				5D4ED1A2D5F22078CC446C0DC715DB3C /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		BDBC64843C23D2025E9F3E84ADC62E5C /* Support Files */ = {
+		92535A6980FC7EADA63689C78DAF3F1A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8C861B516505D44DFA452078F2326794 /* BabyBluetooth.xcconfig */,
-				D06D591B9DCA7F8612A9B10BF45F41AC /* BabyBluetooth-dummy.m */,
-				35BB7276E21CF4AD96C7AD0050D3354B /* BabyBluetooth-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/BabyBluetooth";
-			sourceTree = "<group>";
-		};
-		C138C7E0F32235724FC5AE893C141FE9 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C94811F655DD0FC47C647255A0700E6D /* BabyBluetooth */,
-				67A984E6F5156CAB3FAD1600DD19E24F /* FMDB */,
-				6F74F17B6A8D9126E3717CDEF3F8C1C2 /* MBProgressHUD */,
+				4B09961438BEC52DDC4EDC275980B5B5 /* BabyBluetooth */,
+				0A21E2C2B06F485873FCAB3DCE6AC403 /* DateTools */,
+				5660E4FEEDABA35340D387D04312D51B /* FMDB */,
+				C8E7FEAA98FB4DC8BAED06154961BBAE /* MBProgressHUD */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		C94811F655DD0FC47C647255A0700E6D /* BabyBluetooth */ = {
+		C8E7FEAA98FB4DC8BAED06154961BBAE /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				352DA734B6E78F8AED70135F611875E9 /* BabyBluetooth.h */,
-				8C985D91259F5D4314E1E6A056F54D67 /* BabyBluetooth.m */,
-				859E5BA0A6FF0FEBF1AC0A508C89F8F1 /* BabyCallback.h */,
-				9AFEE48F8D63C8374F776BE9EB3570E9 /* BabyCallback.m */,
-				F3BFB5FBD5A44BEC76EC96535EF0D151 /* BabyCentralManager.h */,
-				2521BD73C69BE0027D30FE7D6F7F3698 /* BabyCentralManager.m */,
-				2A772578227ED53BAB18DC6D82CE050C /* BabyDefine.h */,
-				5A5FDC1C4542A388C8125086F96EC68D /* BabyDefine.m */,
-				FA899CACE80C527F1D67BAB349FFE980 /* BabyOptions.h */,
-				4AEE9A49FB0A808291482F30150C38E7 /* BabyOptions.m */,
-				F3C4290FBC15EF0CF36922F7B98A5408 /* BabyPeripheralManager.h */,
-				CB50AF63ED58A331BCD6E36623A46CB1 /* BabyPeripheralManager.m */,
-				AFA3D61970579B0F20E6A0BD3320E214 /* BabyRhythm.h */,
-				FE52AC53E060986C772A57DE364F297B /* BabyRhythm.m */,
-				32DB185B85FE3FD77B1147B5ECCCA654 /* BabySpeaker.h */,
-				C30937D684C79355D9D42CA18D8CF1A8 /* BabySpeaker.m */,
-				381FD5F37C7A17AED74F1A4829EAB2D5 /* BabyToy.h */,
-				5223856519FED2D15EED85F4F4EC3200 /* BabyToy.m */,
-				BDBC64843C23D2025E9F3E84ADC62E5C /* Support Files */,
+				CF39129DAD55B2C99F41D9BA049ECE4B /* MBProgressHUD.h */,
+				CF65641D2B8E1D076A2F6D4878BBE8B1 /* MBProgressHUD.m */,
+				2860043CEECD0F726522B60D90DF329F /* Support Files */,
 			);
-			path = BabyBluetooth;
-			sourceTree = "<group>";
-		};
-		CA1CD610AC99CCB9D4E6B07AB2A9B0D7 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				AD75DC49E96F297D5A432D8A363E3708 /* MBProgressHUD.xcconfig */,
-				8E3F554EF346BC2FFFA4698CE3737966 /* MBProgressHUD-dummy.m */,
-				0BA4E605B64A2C94090566095A732760 /* MBProgressHUD-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/MBProgressHUD";
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		E0044E8E666319543774E1A410CCAE80 /* Pods-testBleStable */ = {
@@ -338,6 +435,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		5B7C15A3768ACB7BE38A3DD453625300 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6E277CA70064AE2D1F7361009CEB41B /* DateTools.h in Headers */,
+				DE6303DE14BD8A3A264FE96645E8075A /* DTConstants.h in Headers */,
+				70528E7EBDD7860D6CD13AB83B5FD74A /* DTError.h in Headers */,
+				9C3E095663A91660777D0C284588F704 /* DTTimePeriod.h in Headers */,
+				9DA2609B71A9860982B0687802F8D6CB /* DTTimePeriodChain.h in Headers */,
+				B41E7D31B34527CF5A001926809E5DC8 /* DTTimePeriodCollection.h in Headers */,
+				6C8E458BA1C159DDB8D24C215B0CFEE7 /* DTTimePeriodGroup.h in Headers */,
+				EAD8F7B9B19071EB9D3EAA582AD7FAAF /* NSDate+DateTools.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8B2D82357BE4C2A10AB2CD4724B8E654 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -392,26 +504,44 @@
 			);
 			name = BabyBluetooth;
 			productName = BabyBluetooth;
-			productReference = 2023F1FDA5B12DA339BA9FE1783514EF /* libBabyBluetooth.a */;
+			productReference = 300FD85C3AD6393DFFC8DA215010E4C1 /* libBabyBluetooth.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		77752405A73A30C69C41C9E6B9137A54 /* Pods-testBleStable */ = {
+		19C54F3E6C31AAEDF7BD11EBB05BAFA0 /* Pods-testBleStable */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 177D149965561C91BAE79DB14FB461BA /* Build configuration list for PBXNativeTarget "Pods-testBleStable" */;
+			buildConfigurationList = 1CFFDEAC237F887F83F80ABB7523B3DB /* Build configuration list for PBXNativeTarget "Pods-testBleStable" */;
 			buildPhases = (
-				A86A204955D386B542785EB22E4ABB48 /* Sources */,
-				B5B5DBFA55BCE7B35174053117324B20 /* Frameworks */,
+				8BBD13FD3ABCD52E2D01A92137B9922C /* Sources */,
+				D25B6C898591D5F8B91BDDA9C1F058B6 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				784B565DA4CBE058E7810FF822A5093F /* PBXTargetDependency */,
-				23899B68BDE27A20FE9728D79DE526A5 /* PBXTargetDependency */,
-				E7A5A9486B1346E961F4F0DDED3F923A /* PBXTargetDependency */,
+				E58B88CCED4DD08BE35AC7BEEEC9B378 /* PBXTargetDependency */,
+				A7622623D291FB9D362380802FF3224F /* PBXTargetDependency */,
+				83115350927343CF2309AC412B1FDDDB /* PBXTargetDependency */,
+				2EF595EDDF12ECB409916A761FF892B5 /* PBXTargetDependency */,
 			);
 			name = "Pods-testBleStable";
 			productName = "Pods-testBleStable";
-			productReference = F1E184CBF8D70F372681F9BB67E7C599 /* libPods-testBleStable.a */;
+			productReference = C4CDC19D43E23B0366313790D3D6231E /* libPods-testBleStable.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		31FF44B5E2FF8CF00090950A8B67AFF6 /* DateTools */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D080F77A97056851915A3DCE6F7F6EA5 /* Build configuration list for PBXNativeTarget "DateTools" */;
+			buildPhases = (
+				A862A599170D3CC6A194F9C6C9EB7143 /* Sources */,
+				530FD65C498B21E3CC0C04855EB59B4C /* Frameworks */,
+				5B7C15A3768ACB7BE38A3DD453625300 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DateTools;
+			productName = DateTools;
+			productReference = 564E2E026954FB60360E9B689D92D4BC /* libDateTools.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		9F12FB4A63E20F601CFB2E64A65B57C1 /* FMDB */ = {
@@ -428,7 +558,7 @@
 			);
 			name = FMDB;
 			productName = FMDB;
-			productReference = AE927E4AA0CB3B62FADE50C932607640 /* libFMDB.a */;
+			productReference = FA4919046CE094A3E1AEA2303E652D88 /* libFMDB.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		FE2F1D7B9D9FCEA148517E4657B243F4 /* MBProgressHUD */ = {
@@ -445,7 +575,7 @@
 			);
 			name = MBProgressHUD;
 			productName = MBProgressHUD;
-			productReference = 4187EE84166339EDB134FF16454E93F3 /* libMBProgressHUD.a */;
+			productReference = F9EC8A55CD81DDDDBD50045C2E5B845E /* libMBProgressHUD.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -465,14 +595,15 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 2DA3A0640C64032614B320781CF934CE /* Products */;
+			productRefGroup = 2CBD947D541FC0FD3E99D8298621CD6D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				1958ACEBCD9DFAE8B8240D003EB81EA2 /* BabyBluetooth */,
+				31FF44B5E2FF8CF00090950A8B67AFF6 /* DateTools */,
 				9F12FB4A63E20F601CFB2E64A65B57C1 /* FMDB */,
 				FE2F1D7B9D9FCEA148517E4657B243F4 /* MBProgressHUD */,
-				77752405A73A30C69C41C9E6B9137A54 /* Pods-testBleStable */,
+				19C54F3E6C31AAEDF7BD11EBB05BAFA0 /* Pods-testBleStable */,
 			);
 		};
 /* End PBXProject section */
@@ -517,41 +648,62 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A86A204955D386B542785EB22E4ABB48 /* Sources */ = {
+		8BBD13FD3ABCD52E2D01A92137B9922C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CB45FC0151162EB258000388E25407A /* Pods-testBleStable-dummy.m in Sources */,
+				1D0AFF8832D32DC4D0A35CE4FCDAD36C /* Pods-testBleStable-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A862A599170D3CC6A194F9C6C9EB7143 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6B1DF59915B1E66F5B492E3DC382FBD /* DateTools-dummy.m in Sources */,
+				AEF39CCCA47BF107AEC783739E8D6844 /* DTConstants.m in Sources */,
+				ECDC9BE70EBB30AFA33016F779BB7E3D /* DTError.m in Sources */,
+				EF8197F179C59888AD8DC30DF746D15E /* DTTimePeriod.m in Sources */,
+				3971D598267558B94FF665FECDA82111 /* DTTimePeriodChain.m in Sources */,
+				08DDB39F398641BB7B5DE3E676A8170F /* DTTimePeriodCollection.m in Sources */,
+				8DBAE4BE8A114ED7FA30E5811C7C9F15 /* DTTimePeriodGroup.m in Sources */,
+				0C118EA84A58649A57D7BDE7CF5BC9A7 /* NSDate+DateTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		23899B68BDE27A20FE9728D79DE526A5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FMDB;
-			target = 9F12FB4A63E20F601CFB2E64A65B57C1 /* FMDB */;
-			targetProxy = 2C20B4BCC0E8859DED212C5DC0C775AF /* PBXContainerItemProxy */;
-		};
-		784B565DA4CBE058E7810FF822A5093F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = BabyBluetooth;
-			target = 1958ACEBCD9DFAE8B8240D003EB81EA2 /* BabyBluetooth */;
-			targetProxy = A19A7D064F523BB50E0E87E78F3F4332 /* PBXContainerItemProxy */;
-		};
-		E7A5A9486B1346E961F4F0DDED3F923A /* PBXTargetDependency */ = {
+		2EF595EDDF12ECB409916A761FF892B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MBProgressHUD;
 			target = FE2F1D7B9D9FCEA148517E4657B243F4 /* MBProgressHUD */;
-			targetProxy = 02F4B12F8CA30CC4B0CE64009AC025D2 /* PBXContainerItemProxy */;
+			targetProxy = 59E028E67D6B08A40D67DF32FB0811EF /* PBXContainerItemProxy */;
+		};
+		83115350927343CF2309AC412B1FDDDB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FMDB;
+			target = 9F12FB4A63E20F601CFB2E64A65B57C1 /* FMDB */;
+			targetProxy = 304D65144E5E8B7D6E82832A15AF893E /* PBXContainerItemProxy */;
+		};
+		A7622623D291FB9D362380802FF3224F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DateTools;
+			target = 31FF44B5E2FF8CF00090950A8B67AFF6 /* DateTools */;
+			targetProxy = 7945C5DCC227103D0CBD9404FE3D4E79 /* PBXContainerItemProxy */;
+		};
+		E58B88CCED4DD08BE35AC7BEEEC9B378 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BabyBluetooth;
+			target = 1958ACEBCD9DFAE8B8240D003EB81EA2 /* BabyBluetooth */;
+			targetProxy = 1CD6A5F00D445FBF59972A9D8E80773E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0BC8ACAA1BBCD83153EF57E2B89FB594 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E4977D6CB3B84F858A2009021F5AEBF /* FMDB.xcconfig */;
+			baseConfigurationReference = 2D2495565A53B4ADDC6E1C5FBD587D53 /* FMDB.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -572,7 +724,7 @@
 		};
 		0EA9782B2D8E86A84EE526F4244E0D9B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C861B516505D44DFA452078F2326794 /* BabyBluetooth.xcconfig */;
+			baseConfigurationReference = DB6DF5FC8370A3DD3DF787540EFCA94E /* BabyBluetooth.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -593,7 +745,7 @@
 		};
 		1F1DCE74980303898CB8238C0E8709EE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD75DC49E96F297D5A432D8A363E3708 /* MBProgressHUD.xcconfig */;
+			baseConfigurationReference = F3C7287B4A16BED61DAA5E1E73DF58A3 /* MBProgressHUD.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -611,6 +763,27 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
+		};
+		3C9B12A9EEC096449BDF5D6C0C4A8ADA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F66F9BB7AA0DC936CB39F676873C811 /* DateTools.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DateTools/DateTools-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
 		};
 		47BEF9D903506B003EA5C2B249729489 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -654,28 +827,28 @@
 			};
 			name = Debug;
 		};
-		84EC7DF84D3471FD452DF77CAECF23DD /* Debug */ = {
+		55E8DAC72832C2E96FE511EE935B0DFF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 690FF846F5F2704D8D1D1F728EE4C0AD /* Pods-testBleStable.debug.xcconfig */;
+			baseConfigurationReference = 7F66F9BB7AA0DC936CB39F676873C811 /* DateTools.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DateTools/DateTools-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
-		A43C1F1795250E75D054681FE5968132 /* Release */ = {
+		6078F7664661B902F5D35D3F245C8AF8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6B997E769BE1A637CCC5D9DE0981431E /* Pods-testBleStable.release.xcconfig */;
 			buildSettings = {
@@ -695,6 +868,27 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
+		};
+		60B147F360B628F44A1F0023B8DDEC9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 690FF846F5F2704D8D1D1F728EE4C0AD /* Pods-testBleStable.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
 		};
 		AAF678CED40D3499169D10F63CA0719E /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -736,7 +930,7 @@
 		};
 		C14E31B42496EF5C34C9BF2D27E11E2C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD75DC49E96F297D5A432D8A363E3708 /* MBProgressHUD.xcconfig */;
+			baseConfigurationReference = F3C7287B4A16BED61DAA5E1E73DF58A3 /* MBProgressHUD.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -757,7 +951,7 @@
 		};
 		C7BA904A87CCDF175A63DBF60D6810A9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E4977D6CB3B84F858A2009021F5AEBF /* FMDB.xcconfig */;
+			baseConfigurationReference = 2D2495565A53B4ADDC6E1C5FBD587D53 /* FMDB.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -778,7 +972,7 @@
 		};
 		FC3DD78BAFADE15ED76595E9F74B4953 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C861B516505D44DFA452078F2326794 /* BabyBluetooth.xcconfig */;
+			baseConfigurationReference = DB6DF5FC8370A3DD3DF787540EFCA94E /* BabyBluetooth.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -800,11 +994,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		177D149965561C91BAE79DB14FB461BA /* Build configuration list for PBXNativeTarget "Pods-testBleStable" */ = {
+		1CFFDEAC237F887F83F80ABB7523B3DB /* Build configuration list for PBXNativeTarget "Pods-testBleStable" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				84EC7DF84D3471FD452DF77CAECF23DD /* Debug */,
-				A43C1F1795250E75D054681FE5968132 /* Release */,
+				60B147F360B628F44A1F0023B8DDEC9A /* Debug */,
+				6078F7664661B902F5D35D3F245C8AF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -832,6 +1026,15 @@
 			buildConfigurations = (
 				0EA9782B2D8E86A84EE526F4244E0D9B /* Debug */,
 				FC3DD78BAFADE15ED76595E9F74B4953 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D080F77A97056851915A3DCE6F7F6EA5 /* Build configuration list for PBXNativeTarget "DateTools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C9B12A9EEC096449BDF5D6C0C4A8ADA /* Debug */,
+				55E8DAC72832C2E96FE511EE935B0DFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
