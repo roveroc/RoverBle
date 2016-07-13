@@ -39,11 +39,11 @@
         NSString *alarm = @"create table IF NOT EXISTS alarm (id integer primary key autoincrement,name text,note text,\
         time text,week text,state text,watchUUID text,FOREIGN KEY(watchUUID) REFERENCES watch(uuid));";
         //手环充值记录表
-        NSString *charge = @"create table IF NOT EXISTS charge (id integer primary key autoincrement,chargeMoney float,\
+        NSString *charge = @"create table IF NOT EXISTS charge (id integer primary key autoincrement,chargeMoney text,\
         chargeWay text,chargetime text,chargeAddress text,TSN text,watchUUID text,FOREIGN KEY(watchUUID) \
         REFERENCES watch(uuid));";
         //手环消费记录表
-        NSString *spend = @"create table IF NOT EXISTS spend (id integer primary key autoincrement,spendMoney float,\
+        NSString *spend = @"create table IF NOT EXISTS spend (id integer primary key autoincrement,spendMoney text,\
         spendWay text,spendtime text,spendAddress text,TSN text,watchUUID text,FOREIGN KEY(watchUUID) REFERENCES watch(uuid));";
         //睡眠表
         NSString *sleep = @"create table IF NOT EXISTS sleep (id integer primary key autoincrement,day text,beginTime text,\
@@ -75,7 +75,6 @@
 
 #pragma mark ------------------------------------------- <<<用户>>>  插入一条用户数据
 - (BOOL)insertAUserInfo:(Users *)user{
-    
     if([db open]){
         FMResultSet *s = [db executeQuery:@"select name from users where name = ?",name];
         if ([s next]) {
@@ -572,11 +571,209 @@
         [db close];
         return nil;
     }
+    [db close];    
+    return (NSArray *)arr;
+}
+
+
+#pragma mark ------------------------------------------- <<<充值>>>  增加一条充值记录，充值成功后，更新对应手表的余额
+/**
+ *  插入一条充值记录
+ *
+ *  @param charge 充值记录对象
+ *
+ *  @return 是否插入成功
+ */
+- (BOOL)insertAChargeRecord:(Charges *)charge{
+    if([db open]){
+        [db beginTransaction];      //将此次操作当成一个事务处理
+        BOOL isRollBack = NO;
+        float totalMoney;
+        @try {
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+            NSDate *date = [dateFormatter dateFromString:charge.cg_chargeTime];
+            
+            NSTimeInterval timeValue = [date timeIntervalSince1970];
+            NSString *timeString = [NSString stringWithFormat:@"%.0f", timeValue];
+            NSDate *nd = [NSDate dateWithTimeIntervalSince1970:[timeString intValue]];
+            NSTimeInterval realValue = [nd timeIntervalSince1970];
+            NSString *realStr = [NSString stringWithFormat:@"%.0f", realValue];
+            
+            
+            BOOL flag1 = [db executeUpdate:@"insert into charge (chargeMoney,chargeWay,chargetime,chargeAddress,TSN,watchUUID) values (?,?,?,?,?,?)",
+                         charge.cg_chargeMoney,charge.cg_chargeWay,
+                         realStr,charge.cg_chargeAddress,charge.cg_TSN,charge.cg_watchUUID];
+            FMResultSet *s  = [db executeQuery:@"select accountMoney from watch where uuid = ?",
+                               charge.cg_watchUUID];
+            while ([s next]) {
+                totalMoney = [[s stringForColumn:@"accountMoney"] floatValue];
+            }
+            totalMoney+=[charge.cg_chargeMoney floatValue];
+            NSString *money = [NSString stringWithFormat:@"%f",totalMoney];
+            BOOL flag2 = [db executeUpdate:@"update watch set accountMoney = ? where uuid = ?",money,charge.cg_watchUUID];
+            if(flag1 == NO || flag2 == NO){
+                isRollBack = YES;
+            }
+            
+        } @catch (NSException *exception) {
+            isRollBack = YES;
+            [db rollback];
+            return NO;
+        } @finally {
+            if(!isRollBack){
+                if([db commit]){
+                    NSLog(@"插入充值记录成功，并已同步更新余额");
+                    return YES;
+                }else{
+                    [db rollback];
+                    return NO;
+                }
+            }else{
+                [db rollback];
+                return NO;
+            }
+        }
+    }
+    [db close];
+    return NO;
+}
+
+#pragma mark ------------------------------------------- <<<充值>>>  查询最近某些天的充值记录
+/**
+ *  获取最近多少天内的充值记录
+ *
+ *  @param days 多少天
+ *
+ *  @return 返回一个数组，数组每一项为充值记录的对象
+ */
+- (NSArray *)getChargeRecordInDays:(int)days{
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    if([db open]){
+        NSTimeInterval timeValue = [[NSDate date] timeIntervalSince1970];
+        NSString *timeString = [NSString stringWithFormat:@"%.0f", timeValue];
+        NSDate *nd = [NSDate dateWithTimeIntervalSince1970:[timeString intValue]];
+        NSDate *real = [NSDate dateWithYear:nd.year month:nd.month day:nd.day];
+        NSDate *real_1 = [real dateBySubtractingDays:days];
+        NSTimeInterval realValue = [real_1 timeIntervalSince1970];
+        FMResultSet *s1 = [db executeQuery:@"select id ,chargetime from charge"];
+        int index = 0;
+        while ([s1 next]) {
+            index    = [s1 intForColumn:@"id"];
+            int _day = [[s1 stringForColumn:@"chargetime"] intValue];
+            if(_day > realValue)
+                break;
+        }
+        NSLog(@"充值记录 -- 查询时间点的间隔为 = %d",index);
+        
+        FMResultSet *s = [db executeQuery:@"select id,chargeMoney,chargeWay,chargetime,chargeAddress,\
+                          TSN,watchUUID from charge where id >= ?",[NSNumber numberWithInt:index]];
+        while ([s next]) {
+            Charges *cg = [[Charges alloc] init];
+            cg.cg_id              = [s intForColumn:@"id"];
+            cg.cg_chargeMoney     = [s stringForColumn:@"chargeMoney"];
+            cg.cg_chargeWay       = [s stringForColumn:@"chargeWay"];
+            NSString *timeValue   = [s stringForColumn:@"chargetime"];
+            NSDate *nd = [NSDate dateWithTimeIntervalSince1970:[timeValue intValue]];
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+            NSString *strDate = [dateFormatter stringFromDate:nd];
+            cg.cg_chargeTime      = strDate;
+            cg.cg_chargeAddress   = [s stringForColumn:@"chargeAddress"];
+            cg.cg_TSN             = [s stringForColumn:@"TSN"];
+            cg.cg_watchUUID       = [s stringForColumn:@"watchUUID"];
+            
+            [arr addObject:cg];
+        }
+    }else{
+        NSLog(@"数据库打开出错");
+        [db close];
+        return nil;
+    }
     [db close];
     return (NSArray *)arr;
 }
 
 
+#pragma mark ------------------------------------------- <<<绑定银行卡>>>  增加一条银行卡绑定记录
+/**
+ *  增加一条银行卡绑定记录
+ *
+ *  @param bc 绑定卡的对象
+ *
+ *  @return 增加记录是否成功
+ */
+- (BOOL)insertAbindcardInfo:(BindCard *)bc{
+    if([db open]){
+        FMResultSet *s = [db executeQuery:@"select cardNumber from bindCard where cardNumber = ?",bc.bc_cardNumber];
+        if ([s next]) {
+            NSLog(@"该卡已经添加");
+            [db close];
+            return NO;
+        }
+        
+        BOOL flag = [db executeUpdate:@"insert into bindCard (bankName,cardNumber,bindTime,watchUUID)\
+                     values (?,?,?,?)",bc.bc_bankName,bc.bc_cardNumber,bc.bc_bindTime,bc.bc_watchUUID];
+        if(flag == NO){
+            NSLog(@"插入用户数据出错");
+        }
+    }
+    [db close];
+    return NO;
+}
 
+
+#pragma mark ------------------------------------------- <<<绑定银行卡>>>  删除一条绑定卡记录
+/**
+ *  解除银行卡绑定
+ *
+ *  @param bc 银行卡对象
+ *
+ *  @return 解绑是否成功
+ */
+- (BOOL)deleteAbindcardInfo:(BindCard *)bc{
+    if([db open]){
+        BOOL flag = [db executeUpdate:@"delete from bindCard where cardNumber = ?",bc.bc_cardNumber];
+        if (flag) {
+            [db close];
+            return YES;
+        }
+    }
+    NSLog(@"卡号为 = %@ 的银行卡 解除绑定",bc.bc_cardNumber);
+    [db close];
+    return NO;
+}
+
+
+#pragma mark ------------------------------------------- <<<绑定银行卡>>>
+/**
+ *  获取某个手表绑定的银行卡
+ *
+ *  @param watchUUID 手表UUID
+ *
+ *  @return 返回数组对象，数组每一项为BindCard实例
+ */
+- (NSArray *)getAllBindcardInfo:(NSString *)watchUUID{
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    if([db open]){
+        FMResultSet *s = [db executeQuery:@"select id,bankName,cardNumber,bindTime,watchUUID from bindCard \
+                          where watchUUID = ?",watchUUID];
+        while ([s next]) {
+            BindCard *bc = [[BindCard alloc] init];
+            bc.bc_id            = [s intForColumn:@"id"];
+            bc.bc_bankName      = [s stringForColumn:@"bankName"];
+            bc.bc_cardNumber    = [s stringForColumn:@"cardNumber"];
+            bc.bc_bindTime      = [s stringForColumn:@"bindTime"];
+            bc.bc_watchUUID     = [s stringForColumn:@"watchUUID"];
+            [arr addObject:bc];
+        }
+    }else{
+        NSLog(@"数据库打开出错");
+        [db close];
+        return nil;
+    }
+    [db close];
+    return (NSArray *)arr;
+}
 
 @end

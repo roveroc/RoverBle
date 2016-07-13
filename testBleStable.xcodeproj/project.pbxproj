@@ -28,6 +28,7 @@
 		975D0ECD1D2C96CC00480694 /* mainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 975D0ECB1D2C96CC00480694 /* mainViewController.m */; };
 		975D0ECE1D2C96CC00480694 /* mainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 975D0ECC1D2C96CC00480694 /* mainViewController.xib */; };
 		975D0ED01D2C99C200480694 /* PodFile in Resources */ = {isa = PBXBuildFile; fileRef = 975D0ECF1D2C99C200480694 /* PodFile */; };
+		97C389AA1D3617DE00A11A04 /* BindCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C389A91D3617DE00A11A04 /* BindCard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,8 @@
 		975D0ECB1D2C96CC00480694 /* mainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainViewController.m; sourceTree = "<group>"; };
 		975D0ECC1D2C96CC00480694 /* mainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mainViewController.xib; sourceTree = "<group>"; };
 		975D0ECF1D2C99C200480694 /* PodFile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PodFile; sourceTree = "<group>"; };
+		97C389A81D3617DE00A11A04 /* BindCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindCard.h; sourceTree = "<group>"; };
+		97C389A91D3617DE00A11A04 /* BindCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindCard.m; sourceTree = "<group>"; };
 		C7B578A3329F46CC70E5B205 /* libPods-testBleStable.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-testBleStable.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -137,13 +140,13 @@
 			name = Charge;
 			sourceTree = "<group>";
 		};
-		970075061D34F27B00FFE6EE /* Spend */ = {
+		970075061D34F27B00FFE6EE /* Spend(No use) */ = {
 			isa = PBXGroup;
 			children = (
 				970075071D34F29500FFE6EE /* Spendes.h */,
 				970075081D34F29500FFE6EE /* Spendes.m */,
 			);
-			name = Spend;
+			name = "Spend(No use)";
 			sourceTree = "<group>";
 		};
 		973274611D2CA08000319CE8 /* Ble */ = {
@@ -167,7 +170,8 @@
 		9732746E1D2F597000319CE8 /* Instance */ = {
 			isa = PBXGroup;
 			children = (
-				970075061D34F27B00FFE6EE /* Spend */,
+				97C389A71D3617AE00A11A04 /* BindCard */,
+				970075061D34F27B00FFE6EE /* Spend(No use) */,
 				970075021D34EE1A00FFE6EE /* Charge */,
 				970074FE1D34D06500FFE6EE /* Sleep */,
 				970074FA1D338AF600FFE6EE /* Movement */,
@@ -263,6 +267,15 @@
 				975D0ECC1D2C96CC00480694 /* mainViewController.xib */,
 			);
 			name = RootController;
+			sourceTree = "<group>";
+		};
+		97C389A71D3617AE00A11A04 /* BindCard */ = {
+			isa = PBXGroup;
+			children = (
+				97C389A81D3617DE00A11A04 /* BindCard.h */,
+				97C389A91D3617DE00A11A04 /* BindCard.m */,
+			);
+			name = BindCard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +412,7 @@
 				975D0EB41D2C95EE00480694 /* AppDelegate.m in Sources */,
 				970074FD1D338B1A00FFE6EE /* Movementes.m in Sources */,
 				9732747F1D2F9DA700319CE8 /* number.m in Sources */,
+				97C389AA1D3617DE00A11A04 /* BindCard.m in Sources */,
 				973274711D2F599200319CE8 /* Users.m in Sources */,
 				975D0EB11D2C95EE00480694 /* main.m in Sources */,
 				973274641D2CA09F00319CE8 /* BLeHelper.m in Sources */,

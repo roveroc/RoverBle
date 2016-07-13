@@ -12,12 +12,12 @@
 
 
 @property (assign)            int                 cg_id;
-@property (nonatomic, retain) NSDate              *cg_date;
-@property (assign)            float               cg_chargeMoney;
+@property (assign)            NSString            *cg_chargeMoney;
 @property (nonatomic, retain) NSString            *cg_chargeWay;
 @property (nonatomic, retain) NSString            *cg_chargeTime;
 @property (nonatomic, retain) NSString            *cg_chargeAddress;
-@property (nonatomic, retain) NSString            *sp_watchUUID;
+@property (nonatomic, retain) NSString            *cg_TSN;
+@property (nonatomic, retain) NSString            *cg_watchUUID;
 
 
 

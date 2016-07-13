@@ -168,16 +168,37 @@
     sleep.sp_watchUUID = @"123456";
     [db insertASleepRecord:sleep];
     
-    NSArray *sparr = [db getSleepInDays:5];
+    NSArray *sparr = [db getSleepRecordInDays:5];
     NSLog(@"mvarr = %@",sparr);
     
 
 //充值记录
+    Charges *chage = [[Charges alloc] init];
+    chage.cg_chargeMoney = @"1000.";
+    chage.cg_chargeWay   = @"在线充值";
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
+    chage.cg_chargeTime  = strDate;
+    chage.cg_chargeAddress = @"深圳";
+    chage.cg_TSN = @"19021931238931844";
+    chage.cg_watchUUID = @"123456";
+    [db insertAChargeRecord:chage];
     
-
+    NSArray *cgarr = [db getChargeRecordInDays:5];
+    NSLog(@"cgarr = %@",cgarr);
+    
+//银行卡绑定
+    BindCard *bc = [[BindCard alloc] init];
+    bc.bc_bankName = @"农业银行";
+    bc.bc_cardNumber = @"8000988890378876";
+    bc.bc_bindTime = strDate;
+    bc.bc_watchUUID = @"123456";
+    [db insertAbindcardInfo:bc];
+    
+    NSArray *carArr = [db getAllBindcardInfo:@"123456"];
+    NSLog(@"carArr = %@",carArr);
 }
-
-
 
 
 - (void)didReceiveMemoryWarning {

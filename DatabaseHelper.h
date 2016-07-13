@@ -15,6 +15,7 @@
 #import "Sleepes.h"
 #import "Charges.h"
 #import "Spendes.h"
+#import "BindCard.h"
 #import <DateTools.h>
 
 @interface DatabaseHelper : NSObject{
@@ -91,9 +92,23 @@
 
 /**********************手环充值记录表的相关操作***********************/
 //增加一条充值记录
-- (void)insertAChargeRecord:(Charges *)charge;
+- (BOOL)insertAChargeRecord:(Charges *)charge;
 //查询最近某些天的充值记录 <从今天往前推>
 - (NSArray *)getChargeRecordInDays:(int)days;
+
+
+/**********************手环消费记录表的相关操作***********************/  //暂时没用到
+
+
+
+
+/**********************绑定银行卡***********************/
+//增加一条银行卡绑定记录
+- (BOOL)insertAbindcardInfo:(BindCard *)bc;
+//删除一条银行卡绑定记录
+- (BOOL)deleteAbindcardInfo:(BindCard *)bc;
+//获取所有已绑定卡信息
+- (NSArray *)getAllBindcardInfo:(NSString *)watchUUID;
 
 
 
